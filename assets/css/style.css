@@ -1,0 +1,10 @@
+/* Usamos la fuente Inter como predeterminada */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Clase para el enlace activo en el nav */
+.nav-link-active {
+    color: #0D8F8F;
+    font-weight: 600;
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIATEJ - Centro Integral de Atención al TEA y TDAH</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Script para los íconos -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Enlace a nuestra hoja de estilos personalizada -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="bg-white text-gray-700">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#home" class="text-2xl font-bold" style="color: #0A2A4E;">
+                    CIATEJ
+                </a>
+
+                <!-- Navegación para escritorio -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Inicio</a>
+                    <a href="#quienes-somos" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Quiénes Somos</a>
+                    <a href="#servicios" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Servicios</a>
+                    <a href="#evaluacion" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Solicitud de Evaluación</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Contacto</a>
+                </nav>
+
+                <!-- Botón de Menú para móvil -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-[#0D8F8F] focus:outline-none">
+                        <ion-icon name="menu-outline" class="w-7 h-7"></ion-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú desplegable para móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Inicio</a>
+                <a href="#quienes-somos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Quiénes Somos</a>
+                <a href="#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Servicios</a>
+                <a href="#evaluacion" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Solicitud de Evaluación</a>
+                <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== SECCIÓN HERO (INICIO) ========== -->
+        <section id="home" class="pt-20 lg:pt-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl lg:text-5xl font-bold tracking-tight" style="color: #0A2A4E;">
+                            Apoyo especializado para el desarrollo y bienestar de tu hijo.
+                        </h1>
+                        <p class="mt-6 text-lg text-gray-600">
+                            En CIATEJ, ofrecemos un entorno seguro y profesional para la evaluación y atención integral de niños y adolescentes con TEA y TDAH.
+                        </p>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#servicios" class="inline-block w-full sm:w-auto text-center px-8 py-3 text-white font-semibold rounded-lg shadow-md transition-transform duration-300 hover:scale-105" style="background-color: #005960;">
+                                Nuestros Servicios
+                            </a>
+                            <a href="#evaluacion" class="inline-block w-full sm:w-auto text-center px-8 py-3 text-[#005960] font-semibold rounded-lg ring-2 ring-[#005960] transition-transform duration-300 hover:scale-105 hover:bg-gray-100">
+                                Solicitar Evaluación
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <img src="https://placehold.co/600x500/E2F3F3/0A2A4E?text=Imagen+Cálida" alt="Niños jugando felices en un entorno seguro" class="rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN QUIÉNES SOMOS ========== -->
+        <section id="quienes-somos" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight" style="color: #0A2A4E;">Conoce Nuestro Centro</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                        Somos un equipo de profesionales apasionados y dedicados a marcar una diferencia positiva en la vida de las familias.
+                    </p>
+                </div>
+                <div class="mt-12 grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold" style="color: #005960;">Nuestra Misión</h3>
+                        <p>Brindar atención integral, personalizada y basada en evidencia científica para potenciar las habilidades y mejorar la calidad de vida de niños y adolescentes con Trastorno del Espectro Autista (TEA) y Trastorno por Déficit de Atención e Hiperactividad (TDAH).</p>
+                        <h3 class="text-2xl font-semibold" style="color: #005960;">Nuestro Equipo</h3>
+                        <p>Contamos con especialistas en psicología, terapia del lenguaje, terapia ocupacional y psicopedagogía, todos comprometidos con un enfoque cálido, ético y profesional.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/D6EFEF/0A2A4E?text=Nuestro+Equipo" alt="Equipo de profesionales de CIATEJ" class="rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN SERVICIOS ========== -->
+        <section id="servicios" class="py-16 lg:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight" style="color: #0A2A4E;">Servicios Integrales a tu Alcance</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                        Ofrecemos un abanico de servicios diseñados para cubrir las necesidades específicas de cada niño.
+                    </p>
+                </div>
+                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Servicio 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="clipboard-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Evaluación y Diagnóstico</h3>
+                        <p>Proceso completo para identificar necesidades y establecer un plan de acción efectivo.</p>
+                    </div>
+                    <!-- Servicio 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="extension-puzzle-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Terapia Conductual (ABA)</h3>
+                        <p>Intervenciones personalizadas para fomentar habilidades sociales, comunicativas y de aprendizaje.</p>
+                    </div>
+                    <!-- Servicio 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="chatbubbles-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Terapia del Lenguaje</h3>
+                        <p>Apoyo especializado para mejorar la comunicación verbal y no verbal.</p>
+                    </div>
+                    <!-- Servicio 4 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="body-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Terapia Ocupacional</h3>
+                        <p>Desarrollo de habilidades para la vida diaria, la motricidad y la integración sensorial.</p>
+                    </div>
+                    <!-- Servicio 5 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="heart-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Apoyo Psicológico</h3>
+                        <p>Acompañamiento emocional para el niño y su familia, fortaleciendo la autoestima y el bienestar.</p>
+                    </div>
+                    <!-- Servicio 6 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="people-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Talleres para Padres</h3>
+                        <p>Espacios de formación y apoyo para brindar herramientas y estrategias a las familias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN SOLICITUD DE EVALUACIÓN ========== -->
+        <section id="evaluacion" class="py-16 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight" style="color: #0A2A4E;">Inicia el Camino con Nosotros</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                        Completa el siguiente formulario para dar el primer paso. Nuestro equipo se pondrá en contacto contigo para coordinar una cita.
+                    </p>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto">
+                    <!-- Aquí se incrustará el Google Form -->
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-inner flex items-center justify-center h-96">
+                        <p class="text-gray-500 text-center">
+                            [ Espacio reservado para el Formulario de Google ]
+                            <br>
+                            <span class="text-sm">Para incrustarlo, ve a tu Google Form, haz clic en "Enviar", selecciona la opción "&lt; &gt;" y copia el código HTML aquí.</span>
+                        </p>
+                    </div>
+                    <p class="mt-4 text-xs text-center text-gray-500">
+                        Tu información es confidencial y será tratada con el máximo respeto y profesionalismo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN CONTACTO ========== -->
+        <section id="contacto" class="py-16 lg:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight" style="color: #0A2A4E;">¿Tienes Preguntas? Contáctanos</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                        Estamos aquí para ayudarte. Escríbenos o visítanos.
+                    </p>
+                </div>
+                <div class="mt-12 grid lg:grid-cols-2 gap-12">
+                    <!-- Formulario de Contacto -->
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <form action="#" method="POST">
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                                    <input type="text" name="name" id="name" autocomplete="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0D8F8F] focus:border-[#0D8F8F]">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                                    <input type="email" name="email" id="email" autocomplete="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0D8F8F] focus:border-[#0D8F8F]">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                                    <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0D8F8F] focus:border-[#0D8F8F]"></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" class="w-full text-center px-6 py-3 text-white font-semibold rounded-lg shadow-md transition-colors duration-300" style="background-color: #0A2A4E;">
+                                        Enviar Mensaje
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Información y Mapa -->
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold" style="color:#005960">Información de Contacto</h3>
+                            <p class="flex items-center"><ion-icon name="location-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> Tu Dirección, Ciudad, País</p>
+                            <p class="flex items-center"><ion-icon name="call-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> (123) 456-7890</p>
+                            <p class="flex items-center"><ion-icon name="mail-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> contacto@ciatej.com</p>
+                            <p class="flex items-center"><ion-icon name="time-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                        </div>
+                        <div class="h-64 bg-gray-200 rounded-lg shadow-inner flex items-center justify-center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d295.68401536106904!2d-86.57623283242084!3d15.493526484255062!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDI5JzM2LjYiTiA4NsKwMzQnMzUuMCJX!5e1!3m2!1ses!2shn!4v1760049445688!5m2!1ses!2shn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer style="background-color: #0A2A4E;">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-8 text-white">
+                <div>
+                    <h3 class="text-xl font-bold">CIATEJ</h3>
+                    <p class="mt-2 text-gray-300 text-sm">Transformando vidas a través del apoyo especializado y el cuidado compasivo.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Navegación</h4>
+                    <ul class="mt-2 space-y-1 text-sm text-gray-300">
+                        <li><a href="#home" class="hover:text-white">Inicio</a></li>
+                        <li><a href="#quienes-somos" class="hover:text-white">Quiénes Somos</a></li>
+                        <li><a href="#servicios" class="hover:text-white">Servicios</a></li>
+                        <li><a href="#contacto" class="hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Síguenos</h4>
+                    <div class="flex mt-2 space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><ion-icon name="logo-facebook" class="w-6 h-6"></ion-icon></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><ion-icon name="logo-instagram" class="w-6 h-6"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 CIATEJ. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enlace a nuestro archivo JavaScript -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
