@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIATEJ - Centro Integral de Atención al TEA y TDAH</title>
+    <title>CIAJET - Centro Integral de Atención al TEA y TDAH</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,12 +24,13 @@
 <body class="bg-white text-gray-700">
 
     <!-- ========== HEADER ========== -->
-    <header class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+    <header class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm relative translate-y-0">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="#home" class="text-2xl font-bold" style="color: #0A2A4E;">
-                    CIATEJ
+                <a href="#home" class="flex items-center space-x-3 text-2xl font-bold" style="color: #0A2A4E;">
+                    <img src="assets/image/logoCIAJET.png" alt="Centro Integral de Atención al TEA y TDAH" class="w-12 h-12 rounded-lg shadow-xl">
+                    <span>CIAJET</span>
                 </a>
 
                 <!-- Navegación para escritorio -->
@@ -37,12 +38,13 @@
                     <a href="#home" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Inicio</a>
                     <a href="#quienes-somos" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Quiénes Somos</a>
                     <a href="#servicios" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Servicios</a>
+                    <a href="#equipo" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Nuestro Equipo</a>
                     <a href="#evaluacion" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Solicitud de Evaluación</a>
                     <a href="#contacto" class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link">Contacto</a>
                 </nav>
 
                 <!-- Botón de Menú para móvil -->
-                <div class="md:hidden">
+                <div class="md:hidden relative z-50">
                     <button id="mobile-menu-button" class="text-gray-600 hover:text-[#0D8F8F] focus:outline-none">
                         <ion-icon name="menu-outline" class="w-7 h-7"></ion-icon>
                     </button>
@@ -50,14 +52,69 @@
             </div>
         </div>
 
+        <!-- Fondo oscuro detrás del menú -->
+        <div id="mobile-menu-backdrop" class="hidden md:hidden fixed top-16 left-0 bottom-0 w-[40vw] h-screen z-30 bg-black/50 backdrop-blur-sm"></div>
+
         <!-- Menú desplegable para móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Inicio</a>
-                <a href="#quienes-somos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Quiénes Somos</a>
-                <a href="#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Servicios</a>
-                <a href="#evaluacion" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Solicitud de Evaluación</a>
-                <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0D8F8F] hover:bg-gray-50 nav-link">Contacto</a>
+        <div id="mobile-menu" class="hidden md:hidden fixed top-16 right-0 bottom-0 h-screen w-[60vw] z-40 bg-gradient-to-br from-[#0A2A4E] via-[#005960] to-[#0D8F8F] shadow-2xl">
+            <div class="flex flex-col h-full overflow-y-auto">
+                <!-- Header del menú con logo -->
+                <div class="flex items-center justify-center py-6 px-6 border-b border-white/20">
+                    <img src="assets/image/logoCIAJET.png" alt="Centro Integral de Atención al TEA y TDAH" class="w-16 h-16 rounded-full bg-white p-2 shadow-lg">
+                    <div class="ml-4 text-white">
+                        <h2 class="text-xl font-bold">Centro Josué</h2>
+                        <p class="text-sm opacity-80">Centro Integral de Atención al<br>TEA y TDAH</p>
+                    </div>
+                </div>
+
+                <!-- Opciones del menú -->
+                <div class="flex-1 px-6 py-6 space-y-2">
+                    <a href="#home" class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link">
+                        <ion-icon name="home-outline" class="w-6 h-6 mr-4"></ion-icon>
+                        <span class="font-medium">Inicio</span>
+                    </a>
+                    <a href="#quienes-somos" class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link">
+                        <ion-icon name="information-circle-outline" class="w-6 h-6 mr-4"></ion-icon>
+                        <span class="font-medium">Quiénes Somos</span>
+                    </a>
+                    <a href="#servicios" class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link">
+                        <ion-icon name="medical-outline" class="w-6 h-6 mr-4"></ion-icon>
+                        <span class="font-medium">Servicios</span>
+                    </a>
+                    <a href="#equipo" class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link">
+                        <ion-icon name="people-outline" class="w-6 h-6 mr-4"></ion-icon>
+                        <span class="font-medium">Nuestro Equipo</span>
+                    </a>
+                    <a href="#evaluacion" class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link">
+                        <ion-icon name="clipboard-outline" class="w-6 h-6 mr-4"></ion-icon>
+                        <span class="font-medium">Solicitud de Evaluación</span>
+                    </a>
+                    <a href="#contacto" class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link">
+                        <ion-icon name="call-outline" class="w-6 h-6 mr-4"></ion-icon>
+                        <span class="font-medium">Contacto</span>
+                    </a>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="px-6 pb-6">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                        <h3 class="text-white font-semibold mb-3 text-center">Contacto Rápido</h3>
+                        <div class="space-y-2 text-sm text-white/80">
+                            <div class="flex items-center">
+                                <ion-icon name="call-outline" class="w-4 h-4 mr-3"></ion-icon>
+                                <span>9202-2859</span>
+                            </div>
+                            <div class="flex items-center">
+                                <ion-icon name="mail-outline" class="w-4 h-4 mr-3"></ion-icon>
+                                <span>info@centrojosue.org</span>
+                            </div>
+                            <div class="flex items-center">
+                                <ion-icon name="time-outline" class="w-4 h-4 mr-3"></ion-icon>
+                                <span>Lun-Vie: 8:00 AM - 6:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -65,14 +122,24 @@
     <main>
         <!-- ========== SECCIÓN HERO (INICIO) ========== -->
         <section id="home" class="pt-20 lg:pt-24 bg-gray-50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-15">
+                <h1 class="text-4xl lg:text-5xl font-bold tracking-tight" style="color: #0A2A4E;">
+                            ¡Bienvenidos al Centro Integral de Atención al TEA y TDAH "Josué"
+                        </h1>
                 <div class="grid md:grid-cols-2 gap-8 items-center">
                     <div class="text-center md:text-left">
-                        <h1 class="text-4xl lg:text-5xl font-bold tracking-tight" style="color: #0A2A4E;">
-                            Apoyo especializado para el desarrollo y bienestar de tu hijo.
-                        </h1>
+                        
                         <p class="mt-6 text-lg text-gray-600">
-                            En CIATEJ, ofrecemos un entorno seguro y profesional para la evaluación y atención integral de niños y adolescentes con TEA y TDAH.
+                            ¡Bienvenidos a una comunidad que entiende, acompaña y transforma!<br><br>
+                            En el Centro Josué, creemos en el potencial único de cada persona. Somos un espacio creado con amor, respeto y compromiso para acompañar a niños, jóvenes y familias en su camino hacia una vida plena, comprendiendo y atendiendo las particularidades del Trastorno del Espectro Autista (TEA) y el Trastorno por Déficit de Atención e Hiperactividad (TDAH).
+                        </p>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Nuestro equipo multidisciplinario trabaja con vocación, empatía y profesionalismo, ofreciendo diagnósticos precisos, terapias personalizadas y un acompañamiento integral centrado en el bienestar y desarrollo de cada individuo.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-600 font-semibold" style="color: #0A2A4E;">
+                            Aquí, cada paso es importante. Cada avance, un logro. Cada sonrisa, una victoria.<br>
+                            ¡Bienvenidos a una comunidad que entiende, acompaña y transforma!<br>
+                            ¡Gracias por confiar en nosotros! Juntos construimos un futuro con más oportunidades para todos.
                         </p>
                         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                             <a href="#servicios" class="inline-block w-full sm:w-auto text-center px-8 py-3 text-white font-semibold rounded-lg shadow-md transition-transform duration-300 hover:scale-105" style="background-color: #005960;">
@@ -84,7 +151,7 @@
                         </div>
                     </div>
                     <div class="hidden md:block">
-                        <img src="https://placehold.co/600x500/E2F3F3/0A2A4E?text=Imagen+Cálida" alt="Niños jugando felices en un entorno seguro" class="rounded-lg shadow-xl">
+                        <img src="assets/image/Centro.jpeg" alt="Centro Integral de Atención al TEA y TDAH" class="rounded-lg shadow-xl">
                     </div>
                 </div>
             </div>
@@ -94,23 +161,82 @@
         <section id="quienes-somos" class="py-16 lg:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h2 class="text-3xl font-bold tracking-tight" style="color: #0A2A4E;">Conoce Nuestro Centro</h2>
+                    <h2 class="text-3xl font-bold tracking-tight" style="color: #0A2A4E;">¿Quiénes Somos?</h2>
                     <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-                        Somos un equipo de profesionales apasionados y dedicados a marcar una diferencia positiva en la vida de las familias.
+                        El Centro Josué es un espacio terapéutico y educativo especializado en la atención de personas con Trastorno del Espectro Autista (TEA) y Trastorno por Déficit de Atención e Hiperactividad (TDAH). Contamos con un equipo interdisciplinario que trabaja de manera coordinada para brindar diagnósticos, intervenciones terapéuticas, orientación familiar y acompañamiento educativo.
                     </p>
                 </div>
                 <div class="mt-12 grid md:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold" style="color: #005960;">Nuestra Misión</h3>
-                        <p>Brindar atención integral, personalizada y basada en evidencia científica para potenciar las habilidades y mejorar la calidad de vida de niños y adolescentes con Trastorno del Espectro Autista (TEA) y Trastorno por Déficit de Atención e Hiperactividad (TDAH).</p>
-                        <h3 class="text-2xl font-semibold" style="color: #005960;">Nuestro Equipo</h3>
-                        <p>Contamos con especialistas en psicología, terapia del lenguaje, terapia ocupacional y psicopedagogía, todos comprometidos con un enfoque cálido, ético y profesional.</p>
+                        <h3 class="text-2xl font-semibold" style="color: #005960;">Misión</h3>
+                        <p>Brindar una atención integral, personalizada y de calidad a personas con TEA y TDAH, promoviendo su desarrollo, inclusión y bienestar, en un entorno de respeto, empatía y colaboración con sus familias y la comunidad.</p>
+                        <h3 class="text-2xl font-semibold" style="color: #005960;">Visión</h3>
+                        <p>Ser un centro de referencia en la atención integral del TEA y TDAH, reconocido por su calidad humana, profesionalismo y compromiso con la inclusión, contribuyendo a construir una sociedad más consciente, empática y accesible para todos.</p>
+                        
                     </div>
                     <div>
-                        <img src="https://placehold.co/600x400/D6EFEF/0A2A4E?text=Nuestro+Equipo" alt="Equipo de profesionales de CIATEJ" class="rounded-lg shadow-xl">
+                        <img src="assets/image/team/Equipo.jpg" alt="Equipo de profesionales del Centro Josué" class="rounded-lg shadow-xl">
+                    </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center">
+                            <h3 class="text-3xl font-bold tracking-tight" style="color: #005960;">Nuestros Valores</h3>
+                        </div>
+                    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Respeto -->
+                            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                                <div class="text-4xl mb-4 text-[#0D8F8F] flex justify-center">
+                                    <ion-icon name="handshake-outline"></ion-icon>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2" style="color: #005960;">Respeto</h4>
+                                <p class="text-gray-600 text-sm">Valoramos la dignidad y singularidad de cada persona</p>
+                            </div>
+                            <!-- Compromiso -->
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                                <div class="text-4xl mb-4 text-[#0D8F8F] flex justify-center">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2" style="color: #005960;">Compromiso</h4>
+                                <p class="text-gray-600 text-sm">Nos dedicamos con responsabilidad y excelencia</p>
+                            </div>
+                            <!-- Inclusión -->
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                                <div class="text-4xl mb-4 text-[#0D8F8F] flex justify-center">
+                                    <ion-icon name="heart-circle-outline"></ion-icon>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2" style="color: #005960;">Inclusión</h4>
+                                <p class="text-gray-600 text-sm">Promovemos la participación activa en la sociedad</p>
+                            </div>
+                            <!-- Calidad -->
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                                <div class="text-4xl mb-4 text-[#0D8F8F] flex justify-center">
+                                    <ion-icon name="diamond-outline"></ion-icon>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2" style="color: #005960;">Calidad</h4>
+                                <p class="text-gray-600 text-sm">Ofrecemos servicios profesionales y actualizados</p>
+                            </div>
+                            <!-- Trabajo en equipo -->
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                                <div class="text-4xl mb-4 text-[#0D8F8F] flex justify-center">
+                                    <ion-icon name="people-outline"></ion-icon>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2" style="color: #005960;">Trabajo en equipo</h4>
+                                <p class="text-gray-600 text-sm">Colaboramos interdisciplinariamente</p>
+                            </div>
+                            <!-- Amor y vocación de servicio -->
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                                <div class="text-4xl mb-4 text-[#0D8F8F] flex justify-center">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2" style="color: #005960;">Amor y vocación de servicio</h4>
+                                <p class="text-gray-600 text-sm">Actuamos con calidez y dedicación genuina</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <!-- ========== SECCIÓN SERVICIOS ========== -->
@@ -126,39 +252,119 @@
                     <!-- Servicio 1 -->
                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                         <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="clipboard-outline"></ion-icon></div>
-                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Evaluación y Diagnóstico</h3>
-                        <p>Proceso completo para identificar necesidades y establecer un plan de acción efectivo.</p>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Evaluación y diagnóstico TEA, TDAH</h3>
+                        <p>Evaluación especializada para identificar y diagnosticar Trastorno del Espectro Autista y TDAH.</p>
                     </div>
                     <!-- Servicio 2 -->
                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="extension-puzzle-outline"></ion-icon></div>
-                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Terapia Conductual (ABA)</h3>
-                        <p>Intervenciones personalizadas para fomentar habilidades sociales, comunicativas y de aprendizaje.</p>
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="chatbubbles-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Terapia del lenguaje y comunicación</h3>
+                        <p>Terapia especializada para mejorar las habilidades de comunicación verbal y no verbal.</p>
                     </div>
                     <!-- Servicio 3 -->
                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="chatbubbles-outline"></ion-icon></div>
-                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Terapia del Lenguaje</h3>
-                        <p>Apoyo especializado para mejorar la comunicación verbal y no verbal.</p>
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="body-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Terapia ocupacional y sensorial</h3>
+                        <p>Intervenciones para mejorar la integración sensorial y las habilidades motoras.</p>
                     </div>
                     <!-- Servicio 4 -->
                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="body-outline"></ion-icon></div>
-                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Terapia Ocupacional</h3>
-                        <p>Desarrollo de habilidades para la vida diaria, la motricidad y la integración sensorial.</p>
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="heart-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Psicología y neuropsicología</h3>
+                        <p>Servicios profesionales de evaluación y apoyo psicológico especializado.</p>
                     </div>
                     <!-- Servicio 5 -->
                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="heart-outline"></ion-icon></div>
-                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Apoyo Psicológico</h3>
-                        <p>Acompañamiento emocional para el niño y su familia, fortaleciendo la autoestima y el bienestar.</p>
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="extension-puzzle-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Intervención conductual</h3>
+                        <p>Estrategias especializadas para mejorar conductas y habilidades adaptativas.</p>
                     </div>
                     <!-- Servicio 6 -->
                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="people-outline"></ion-icon></div>
-                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Talleres para Padres</h3>
-                        <p>Espacios de formación y apoyo para brindar herramientas y estrategias a las familias.</p>
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="school-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Apoyo psicoeducativo</h3>
+                        <p>Acompañamiento educativo especializado para optimizar el aprendizaje.</p>
                     </div>
+                    <!-- Servicio 7 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="people-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Orientación y acompañamiento familiar</h3>
+                        <p>Apoyo integral para familias, brindando herramientas y estrategias efectivas.</p>
+                    </div>
+                    <!-- Servicio 8 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-3xl mb-4" style="color: #0D8F8F;"><ion-icon name="happy-outline"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Talleres grupales y actividades inclusivas</h3>
+                        <p>Espacios de integración y desarrollo social a través de actividades grupales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN NUESTRO EQUIPO ========== -->
+        <section id="equipo" class="py-16 lg:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight" style="color: #0A2A4E;">Nuestro Equipo</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                        Profesionales especializados comprometidos con brindar la mejor atención a cada persona y familia.
+                    </p>
+                </div>
+                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Psicólogo 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="assets/image/team/Jefa.jpg" alt="Terapeuta, Jefa del Equipo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1" style="color: #005960;">Olga Bidilia Zavala Diaz</h3>
+                        <p class="text-gray-600 mb-2">Terapeuta, Jefa del Equipo</p>
+                        <p class="text-sm text-gray-500">Especialista en TEA y TDAH</p>
+                    </div>
+                    <!-- Psicólogo 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="assets/image/team/Mateo.jpg" alt="Psicólogo Infantil" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1" style="color: #005960;">Robert Mateo Martinez Zavala</h3>
+                        <p class="text-gray-600 mb-2">Psicólogo Infantil</p>
+                        <p class="text-sm text-gray-500">Especialista en intervención conductual</p>
+                    </div>
+                    <!-- Terapeuta 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="assets/image/team/Gustavo.jpg" alt="Psicólogo General" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1" style="color: #005960;">Gustavo Rodriguez</h3>
+                        <p class="text-gray-600 mb-2">Psicólogo General</p>
+                        <p class="text-sm text-gray-500">Especialista en comunicación</p>
+                    </div>
+                    <!-- Terapeuta 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="assets/image/team/Hansel.jpg" alt="Soporte Tecnico" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1" style="color: #005960;">Hansel Samir Martinez Zavala</h3>
+                        <p class="text-gray-600 mb-2">Soporte Tecnico</p>
+                        <p class="text-sm text-gray-500">Especialista en tecnologia</p>
+                    </div>
+                    <!-- Educadora Especial 
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <ion-icon name="person-outline" class="text-3xl text-gray-600"></ion-icon>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1" style="color: #005960;">[Nombre de la Educadora]</h3>
+                        <p class="text-gray-600 mb-2">Educadora Especial</p>
+                        <p class="text-sm text-gray-500">Especialista en apoyo psicoeducativo</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <ion-icon name="person-outline" class="text-3xl text-gray-600"></ion-icon>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-1" style="color: #005960;">[Nombre del Neuropsicólogo]</h3>
+                        <p class="text-gray-600 mb-2">Neuropsicólogo</p>
+                        <p class="text-sm text-gray-500">Especialista en evaluación cognitiva</p>
+                    </div>-->
                 </div>
             </div>
         </section>
@@ -166,20 +372,39 @@
         <!-- ========== SECCIÓN SOLICITUD DE EVALUACIÓN ========== -->
         <section id="evaluacion" class="py-16 lg:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center text-3xl font-bold tracking-tight" style="color: #0A2A4E;">
+                    <h1>Proceso de Evaluación  </h1>
+                </div>
+                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Consulta Inicial</h3>
+                        <p>Primera reunión donde conocemos tu situación, escuchamos tus inquietudes y explicamos nuestro enfoque de atención especializada.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Evaluación Integral</h3>
+                        <p>Realizamos una batería completa de pruebas especializadas, incluyendo evaluación psicológica, neuropsicológica y observación conductual.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Análisis y Diagnóstico</h3>
+                        <p>Procesamiento detallado de toda la información recopilada para llegar a conclusiones precisas y recomendaciones específicas.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Informe Completo</h3>
+                        <p>Entrega de un informe detallado con los resultados, diagnóstico y plan de intervención personalizado.</p>
+                    </div>
+                    <br>
+                </div>
                 <div class="text-center">
                     <h2 class="text-3xl font-bold tracking-tight" style="color: #0A2A4E;">Inicia el Camino con Nosotros</h2>
                     <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
                         Completa el siguiente formulario para dar el primer paso. Nuestro equipo se pondrá en contacto contigo para coordinar una cita.
                     </p>
                 </div>
+                
                 <div class="mt-12 max-w-4xl mx-auto">
                     <!-- Aquí se incrustará el Google Form -->
-                    <div class="bg-gray-100 p-8 rounded-lg shadow-inner flex items-center justify-center h-96">
-                        <p class="text-gray-500 text-center">
-                            [ Espacio reservado para el Formulario de Google ]
-                            <br>
-                            <span class="text-sm">Para incrustarlo, ve a tu Google Form, haz clic en "Enviar", selecciona la opción "&lt; &gt;" y copia el código HTML aquí.</span>
-                        </p>
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-inner">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSftqyvcHh7cvthgm2U33kyPGBx_XGcnEEf-YzwiVgsCDl6MSQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" class="form-iframe" style="max-width: 640px; margin: 0 auto; display: block;" allowfullscreen>Loading...</iframe>
                     </div>
                     <p class="mt-4 text-xs text-center text-gray-500">
                         Tu información es confidencial y será tratada con el máximo respeto y profesionalismo.
@@ -226,13 +451,13 @@
                     <div class="space-y-8">
                         <div class="space-y-4">
                             <h3 class="text-xl font-semibold" style="color:#005960">Información de Contacto</h3>
-                            <p class="flex items-center"><ion-icon name="location-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> Tu Dirección, Ciudad, País</p>
-                            <p class="flex items-center"><ion-icon name="call-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> (123) 456-7890</p>
-                            <p class="flex items-center"><ion-icon name="mail-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> contacto@ciatej.com</p>
-                            <p class="flex items-center"><ion-icon name="time-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                             <p class="flex items-center"><ion-icon name="location-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> Colonia la Conquista 8 cuadras al norte de la calle que conduce al Hospital Aníbal Murillo Escobar</p>
+                             <p class="flex items-center"><ion-icon name="call-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> 9202-2859</p>
+                             <p class="flex items-center"><ion-icon name="mail-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> contacto@centrojosue.org</p>
+                             <p class="flex items-center"><ion-icon name="time-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> Lunes a Viernes: 9:00 AM - 6:00 PM</p>
                         </div>
                         <div class="h-64 bg-gray-200 rounded-lg shadow-inner flex items-center justify-center">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d295.68401536106904!2d-86.57623283242084!3d15.493526484255062!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDI5JzM2LjYiTiA4NsKwMzQnMzUuMCJX!5e1!3m2!1ses!2shn!4v1760049445688!5m2!1ses!2shn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d497.27961240788085!2d-86.57651763451744!3d15.493378813370235!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDI5JzM2LjYiTiA4NsKwMzQnMzUuMCJX!5e1!3m2!1ses!2shn!4v1760077776242!5m2!1ses!2shn" width="100%" height="100%" style="border:0; border-radius: 0.5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -245,7 +470,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid md:grid-cols-3 gap-8 text-white">
                 <div>
-                    <h3 class="text-xl font-bold">CIATEJ</h3>
+                    <h3 class="text-xl font-bold">Centro Josué</h3>
                     <p class="mt-2 text-gray-300 text-sm">Transformando vidas a través del apoyo especializado y el cuidado compasivo.</p>
                 </div>
                 <div>
@@ -254,6 +479,7 @@
                         <li><a href="#home" class="hover:text-white">Inicio</a></li>
                         <li><a href="#quienes-somos" class="hover:text-white">Quiénes Somos</a></li>
                         <li><a href="#servicios" class="hover:text-white">Servicios</a></li>
+                        <li><a href="#equipo" class="hover:text-white">Nuestro Equipo</a></li>
                         <li><a href="#contacto" class="hover:text-white">Contacto</a></li>
                     </ul>
                 </div>
@@ -266,7 +492,7 @@
                 </div>
             </div>
             <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
-                <p>&copy; 2024 CIATEJ. Todos los derechos reservados.</p>
+                <p>&copy; 2024 Centro Josué. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

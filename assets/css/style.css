@@ -8,3 +8,95 @@ body {
     color: #0D8F8F;
     font-weight: 600;
 }
+
+/* Estilos para el iframe del formulario */
+.form-iframe {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Aseguramos que el contenido no se sobreponga al header fijo */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* Transiciones para el comportamiento del header */
+header {
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+/* Estado inicial del header */
+header {
+    transform: translateY(0);
+}
+
+/* Header visible */
+header.translate-y-0 {
+    transform: translateY(0);
+}
+
+/* Header oculto */
+header.-translate-y-full {
+    transform: translateY(-100%);
+}
+
+/* Estilos para el menú móvil */
+#mobile-menu {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 45;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Scroll suave para el menú móvil */
+#mobile-menu div::-webkit-scrollbar {
+    width: 4px;
+}
+
+#mobile-menu div::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+#mobile-menu div::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+#mobile-menu div::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Backdrop del menú móvil */
+#mobile-menu-backdrop {
+    transition: opacity 0.3s ease;
+}
+
+#mobile-menu-backdrop.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#mobile-menu-backdrop:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Animación para abrir/cerrar el menú móvil */
+#mobile-menu.show {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
