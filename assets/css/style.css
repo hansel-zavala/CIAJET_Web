@@ -1,6 +1,342 @@
 /* Usamos la fuente Inter como predeterminada */
 body {
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* ========== ESTILOS MODERNOS ========== */
+
+/* Gradientes atractivos */
+.hero-gradient {
+    background: linear-gradient(135deg, #0A2A4E 0%, #005960 50%, #0D8F8F 100%);
+}
+
+.card-gradient {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.05);
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Efectos de hover mejorados */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Animaciones de entrada */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Elementos decorativos */
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Mejoras de tipografía */
+.text-gradient {
+    background: linear-gradient(135deg, #0A2A4E, #0D8F8F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.title-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== SECCIONES ESPECÍFICAS ========== */
+
+/* Hero section mejorada */
+.hero-section {
+    background: linear-gradient(135deg, rgba(10, 42, 78, 0.95) 0%, rgba(0, 89, 96, 0.9) 50%, rgba(13, 143, 143, 0.95) 100%),
+                url('../image/Centro.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(13, 143, 143, 0.3) 0%, transparent 50%);
+}
+
+/* Tarjetas de servicios mejoradas */
+.service-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(13, 143, 143, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(13, 143, 143, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(13, 143, 143, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: rgba(13, 143, 143, 0.3);
+}
+
+/* Iconos animados */
+.icon-bounce {
+    transition: transform 0.3s ease;
+}
+
+.icon-bounce:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Valores section con círculos */
+.value-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #0D8F8F, #005960);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.value-circle:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 20px rgba(13, 143, 143, 0.3);
+}
+
+/* Botones mejorados */
+.btn-primary {
+    background: linear-gradient(135deg, #0A2A4E, #005960);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(10, 42, 78, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #005960;
+    color: #005960;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #005960, #0D8F8F);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 143, 143, 0.2);
+}
+
+/* ========== SECCIÓN EQUIPO MEJORADA ========== */
+.team-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(13, 143, 143, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(13, 143, 143, 0.2);
+    border-color: rgba(13, 143, 143, 0.3);
+}
+
+.team-avatar {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.team-avatar::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #0D8F8F, #005960, #0A2A4E);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-card:hover .team-avatar::after {
+    opacity: 1;
+}
+
+/* ========== ELEMENTOS DECORATIVOS ========== */
+.bg-pattern {
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(13, 143, 143, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(10, 42, 78, 0.1) 0%, transparent 50%);
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(13, 143, 143, 0.1), rgba(10, 42, 78, 0.1));
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 60px;
+    height: 60px;
+    top: 10%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 40px;
+    height: 40px;
+    top: 60%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.shape-3 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+/* ========== ANIMACIONES DE SCROLL ========== */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== NEWSLETTER/TESTIMONIOS ========== */
+.testimonial-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border-left: 4px solid #0D8F8F;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 4rem;
+    color: rgba(13, 143, 143, 0.1);
+    font-family: serif;
+}
+
+/* ========== NEWSLETTER SECTION ========== */
+.newsletter-section {
+    background: linear-gradient(135deg, rgba(10, 42, 78, 0.95) 0%, rgba(0, 89, 96, 0.9) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(13, 143, 143, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ========== FOOTER MEJORADO ========== */
+.footer-enhanced {
+    background: linear-gradient(135deg, #0A2A4E 0%, #005960 100%);
+    position: relative;
+}
+
+.footer-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(13, 143, 143, 0.5), transparent);
 }
 
 /* Clase para el enlace activo en el nav */

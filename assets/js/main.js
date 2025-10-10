@@ -152,4 +152,81 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         scrollThrottle = setTimeout(handleHeaderScroll, 10);
     });
+
+    // ========== ANIMACIONES DE SCROLL ==========
+    function handleScrollAnimations() {
+        const scrollElements = document.querySelectorAll('.scroll-animate');
+
+        scrollElements.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('animate');
+            }
+        });
+    }
+
+    // Event listener para animaciones de scroll
+    window.addEventListener('scroll', function() {
+        handleScrollAnimations();
+    });
+
+    // Inicializar animaciones al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+        handleScrollAnimations();
+    });
+
+    // ========== INTERSECCIÓN OBSERVER PARA ANIMACIONES ==========
+    const animatedElements = document.querySelectorAll('.fade-in, .scroll-animate');
+
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationDelay = `${Math.random() * 0.5}s`;
+                entry.target.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    animatedElements.forEach((element) => {
+        animationObserver.observe(element);
+    });
+
+    // ========== CONTADOR ANIMADO ==========
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const step = target / (duration / 16);
+
+        function updateCounter() {
+            start += step;
+            if (start < target) {
+                element.textContent = Math.floor(start) + '+';
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target + '+';
+            }
+        }
+
+        updateCounter();
+    }
+
+    // Observador para contadores
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute('data-target'));
+                animateCounter(entry.target, target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Aplicar observador a elementos con data-target
+    document.querySelectorAll('[data-target]').forEach((element) => {
+        counterObserver.observe(element);
+    });
 });
