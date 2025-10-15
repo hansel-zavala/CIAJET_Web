@@ -229,4 +229,62 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-target]').forEach((element) => {
         counterObserver.observe(element);
     });
+
+    // ========== MANEJO DE ERRORES CORS Y RECURSOS EXTERNOS ==========
+
+    // Función para verificar conectividad
+    function checkOnlineStatus() {
+        return navigator.onLine;
+    }
+
+    // Manejar errores de carga de íconos
+    document.addEventListener('error', function(e) {
+        if (e.target.tagName === 'SCRIPT' && e.target.src.includes('ionicons')) {
+            console.warn('Error cargando íconos externos, usando fallback');
+            // Los íconos seguirán funcionando con el CSS fallback
+        }
+
+        if (e.target.tagName === 'LINK' && e.target.href.includes('fonts')) {
+            console.warn('Error cargando fuentes externas, usando fuentes del sistema');
+            document.body.classList.add('fonts-loading');
+        }
+    }, true);
+
+    // Marcar fuentes como cargadas cuando estén listas
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+            document.body.classList.remove('fonts-loading');
+            document.body.classList.add('fonts-loaded');
+        }, 1000);
+    });
+
+    // Función para recargar recursos problemáticos
+    window.retryLoadResources = function() {
+        // Recargar íconos si es necesario
+        const ioniconsScripts = document.querySelectorAll('script[src*="ionicons"]');
+        ioniconsScripts.forEach(script => {
+            if (script.complete === false) {
+                const newScript = document.createElement('script');
+                newScript.src = script.src + '?retry=' + Date.now();
+                newScript.type = script.type;
+                document.head.appendChild(newScript);
+            }
+        });
+    };
+
+    // Verificar estado de conexión
+    window.addEventListener('online', function() {
+        console.log('Conexión restablecida - Recursos externos deberían cargar correctamente');
+        retryLoadResources();
+    });
+
+    window.addEventListener('offline', function() {
+        console.warn('Sin conexión - Algunos recursos externos pueden no cargar');
+        document.body.classList.add('offline-mode');
+    });
+
+    // Inicializar estado de conexión
+    if (!checkOnlineStatus()) {
+        document.body.classList.add('offline-mode');
+    }
 });

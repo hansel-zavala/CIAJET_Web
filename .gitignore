@@ -1,0 +1,21 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime
+node_modules/
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Cache
+.cache/
