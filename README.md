@@ -1,88 +1,43 @@
-# Centro Josué - Página Web
+# Astro Starter Kit: Minimal
 
-Centro Integral de Atención al TEA y TDAH "Josué"
-
-## 🚀 Cómo ejecutar la página web
-
-### Método 1: Usando el servidor incluido (Recomendado)
-
-1. Abre una terminal en VS Code
-2. Ejecuta: `npx http-server -p 8000`
-3. Abre tu navegador y ve a: `http://localhost:8000`
-
-### Método 2: Usando Live Server (VS Code)
-
-1. Instala la extensión "Live Server" en VS Code
-2. Haz clic derecho en `index.html`
-3. Selecciona "Open with Live Server"
-
-### Método 3: Usando Python (si tienes Python instalado)
-
-```bash
-python -m http.server 8000
+```sh
+npm create astro@latest -- --template minimal
 ```
 
-## ✨ Características de la página
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-- ✅ **Diseño moderno y responsivo**
-- ✅ **Animaciones suaves y efectos visuales**
-- ✅ **Formulario de contacto integrado**
-- ✅ **Galería de equipo profesional**
-- ✅ **Sección de testimonios**
-- ✅ **Navegación móvil optimizada**
-- ✅ **Sin errores de consola**
+## 🚀 Project Structure
 
-## 🛠️ Tecnologías utilizadas
+Inside of your Astro project, you'll see the following folders and files:
 
-- **HTML5** - Estructura semántica
-- **CSS3** - Estilos modernos con gradientes y animaciones
-- **JavaScript** - Interactividad y animaciones
-- **Tailwind CSS** - Framework CSS utilitario
-- **Ionicons** - Iconografía moderna
-- **Google Fonts** - Tipografía profesional (Inter)
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-## 📱 Secciones de la página
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-1. **Inicio** - Hero con estadísticas y llamada a acción
-2. **Quiénes Somos** - Misión, visión y valores
-3. **Servicios** - 8 servicios especializados
-4. **Nuestro Equipo** - Profesionales del centro
-5. **Testimonios** - Experiencias de familias
-6. **Evaluación** - Proceso y formulario de contacto
-7. **Contacto** - Información y ubicación
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## 🔧 Solución de problemas comunes
+Any static assets, like images, can be placed in the `public/` directory.
 
-### Error de CORS con íconos
-- ✅ **Solucionado** - Se agregó CSS fallback y múltiples fuentes de íconos
+## 🧞 Commands
 
-### Fuentes de Google no cargan
-- ✅ **Solucionado** - Se agregó fallback a fuentes del sistema
+All commands are run from the root of the project, from a terminal:
 
-### Formulario de Google Forms no funciona
-- ✅ **Solucionado** - Requiere servidor HTTP (no abrir directamente el archivo)
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 📞 Información de contacto
+## 👀 Want to learn more?
 
-**Centro Josué**
-- Teléfono: 9202-2859
-- Email: info@centrojosue.org
-- Horario: Lun-Vie: 8:00 AM - 6:00 PM
-
-## 🎨 Personalización
-
-Para modificar colores, fuentes o estilos:
-1. Edita `assets/css/style.css`
-2. Los colores principales están definidos como variables CSS
-3. Las animaciones pueden ajustarse en la sección correspondiente
-
-## 🚀 Despliegue
-
-Para subir a un hosting web:
-1. Sube todos los archivos manteniendo la estructura de carpetas
-2. Asegúrate de que el servidor soporte HTTPS
-3. Verifica que todas las imágenes carguen correctamente
-
----
-
-**¡Tu página web está lista para impresionar! 🎉**
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

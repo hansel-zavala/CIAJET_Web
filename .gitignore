@@ -1,21 +1,26 @@
-# Sistema
-.DS_Store
-Thumbs.db
+# build output
+dist/
+# generated types
+.astro/
 
-# Editor
-.vscode/
-.idea/
-
-# Logs
-*.log
-npm-debug.log*
-
-# Runtime
+# dependencies
 node_modules/
 
-# Archivos temporales
-*.tmp
-*.temp
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Cache
-.cache/
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+legacy_site/

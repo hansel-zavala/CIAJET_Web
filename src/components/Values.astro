@@ -1,0 +1,109 @@
+---
+---
+<!-- ========== SECCIÓN VALORES ========== -->
+<section class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+    <div class="floating-shape shape-2 hidden lg:block"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center fade-in">
+            <h3 class="text-4xl font-bold tracking-tight title-shadow mb-6">
+                <span class="text-gradient">Nuestros</span> Valores
+            </h3>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                Los principios que guían nuestro trabajo y definen nuestro compromiso con cada familia
+            </p>
+        </div>
+
+        <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Respeto -->
+            <div class="card-gradient p-8 rounded-2xl hover-lift text-center scroll-animate">
+                <div class="value-circle mb-6">
+                    <ion-icon name="hand-left-outline" class="text-2xl"></ion-icon>
+                </div>
+                <h4 class="text-2xl font-bold mb-3 text-gradient">Respeto</h4>
+                <p class="text-gray-600 leading-relaxed">Valoramos la dignidad y singularidad de cada persona, reconociendo su valor único</p>
+            </div>
+
+            <!-- Compromiso -->
+            <div class="card-gradient p-8 rounded-2xl hover-lift text-center scroll-animate">
+                <div class="value-circle mb-6">
+                    <ion-icon name="star-outline" class="text-2xl"></ion-icon>
+                </div>
+                <h4 class="text-2xl font-bold mb-3 text-gradient">Compromiso</h4>
+                <p class="text-gray-600 leading-relaxed">Nos dedicamos con responsabilidad y excelencia en cada intervención terapéutica</p>
+            </div>
+
+            <!-- Inclusión -->
+            <div class="card-gradient p-8 rounded-2xl hover-lift text-center scroll-animate">
+                <div class="value-circle mb-6">
+                    <ion-icon name="heart-circle-outline" class="text-2xl"></ion-icon>
+                </div>
+                <h4 class="text-2xl font-bold mb-3 text-gradient">Inclusión</h4>
+                <p class="text-gray-600 leading-relaxed">Promovemos la participación activa en la sociedad con igualdad de oportunidades</p>
+            </div>
+
+            <!-- Calidad -->
+            <div class="card-gradient p-8 rounded-2xl hover-lift text-center scroll-animate">
+                <div class="value-circle mb-6">
+                    <ion-icon name="diamond-outline" class="text-2xl"></ion-icon>
+                </div>
+                <h4 class="text-2xl font-bold mb-3 text-gradient">Calidad</h4>
+                <p class="text-gray-600 leading-relaxed">Ofrecemos servicios profesionales y actualizados con estándares de excelencia</p>
+            </div>
+
+            <!-- Trabajo en equipo -->
+            <div class="card-gradient p-8 rounded-2xl hover-lift text-center scroll-animate">
+                <div class="value-circle mb-6">
+                    <ion-icon name="people-outline" class="text-2xl"></ion-icon>
+                </div>
+                <h4 class="text-2xl font-bold mb-3 text-gradient">Trabajo en Equipo</h4>
+                <p class="text-gray-600 leading-relaxed">Colaboramos interdisciplinariamente potenciando las fortalezas de cada profesional</p>
+            </div>
+
+            <!-- Amor y vocación -->
+            <div class="card-gradient p-8 rounded-2xl hover-lift text-center scroll-animate">
+                <div class="value-circle mb-6">
+                    <ion-icon name="heart-outline" class="text-2xl"></ion-icon>
+                </div>
+                <h4 class="text-2xl font-bold mb-3 text-gradient">Amor y Vocación</h4>
+                <p class="text-gray-600 leading-relaxed">Actuamos con calidez y dedicación genuina en cada interacción terapéutica</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Scroll Animation Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll('.fade-in, .scroll-animate');
+
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    (entry.target as HTMLElement).style.animationDelay = `${Math.random() * 0.5}s`;
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach((element) => {
+            animationObserver.observe(element);
+        });
+        
+        // Also handle the basic "visible" check on scroll for elements that might not have triggered
+        function handleScrollAnimations() {
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            scrollElements.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animate');
+                }
+            });
+        }
+        window.addEventListener('scroll', handleScrollAnimations);
+        handleScrollAnimations(); // Initial check
+    });
+</script>
