@@ -1,101 +1,200 @@
 ---
+
 ---
+
 <!-- ========== SECCIÓN HERO (INICIO) ========== -->
-<section id="home" class="pt-20 lg:pt-24 hero-section relative overflow-hidden">
-    <!-- Elementos decorativos flotantes -->
-    <div class="floating-shape shape-1 hidden lg:block"></div>
-    <div class="floating-shape shape-2 hidden lg:block"></div>
-    <div class="floating-shape shape-3 hidden lg:block"></div>
-
-    <div class="container mx-auto px-4 sm:px-6 lg:px-15 relative z-10">
-        <div class="grid md:grid-cols-2 gap-8 items-center min-h-[80vh]">
-            <div class="text-center md:text-left text-white fade-in">
-                <h1 class="text-4xl lg:text-6xl font-bold tracking-tight title-shadow mb-6">
-                    <span class="text-gradient">¡Bienvenidos al Centro</span><br>
-                    <span class="block mt-2">Integral de Atención al</span>
-                    <span class="text-gradient">TEA y TDAH "Josué"</span>
-                </h1>
-
-                <p class="mt-6 text-xl text-gray-100 leading-relaxed">
-                    ¡Bienvenidos a una comunidad que <strong class="text-white">entiende, acompaña y transforma!</strong>
-                </p>
-
-                <p class="mt-4 text-lg text-gray-200 leading-relaxed">
-                    En el Centro Josué, creemos en el potencial único de cada persona. Somos un espacio creado con amor, respeto y compromiso para acompañar a niños, jóvenes y familias.
-                </p>
-
-                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#servicios" class="btn-primary inline-block w-full sm:w-auto text-center px-8 py-4 text-white font-semibold rounded-lg shadow-lg hover-lift">
-                        Nuestros Servicios
-                    </a>
-                    <a href="#evaluacion" class="btn-secondary inline-block w-full sm:w-auto text-center px-8 py-4 font-semibold rounded-lg hover-lift bg-gradient-to-br from-[#0D8F8F] to-[#005960] text-white">
-                        Solicitar Evaluación
-                    </a>
-                </div>
-
-                <!-- Estadísticas rápidas -->
-                <div class="mt-12 grid grid-cols-3 gap-4 md:gap-8">
-                    <div class="text-center">
-                        <div class="text-2xl md:text-3xl font-bold text-white" data-target="1">1+</div>
-                        <div class="text-sm text-gray-300">Años de Experiencia</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl md:text-3xl font-bold text-white" data-target="100">100+</div>
-                        <div class="text-sm text-gray-300">Familias Atendidas</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl md:text-3xl font-bold text-white" data-target="4">4</div>
-                        <div class="text-sm text-gray-300">Especialistas</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hidden md:block fade-in">
-                <div class="relative">
-                    <img src="/assets/image/Centro.jpeg" alt="Centro Integral de Atención al TEA y TDAH" class="rounded-2xl shadow-2xl w-full max-w-lg mx-auto hover-lift">
-                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-[#0D8F8F] to-[#005960] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                        ¡CIAJET!
-                    </div>
-                </div>
-            </div>
-        </div>
+<section
+  id="home"
+  class="relative pt-32 pb-20 lg:pt-35 lg:pb-35 overflow-hidden"
+>
+  <!-- Background con superposición mejorada -->
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-[#0f172a]/95 via-[#005960]/90 to-[#0d8f8f]/85 z-10"
+    >
     </div>
+    <img
+      src="/assets/image/Centro.jpeg"
+      alt="Fondo Centro CIAJET"
+      class="w-full h-full object-cover object-center"
+    />
+  </div>
+
+  <!-- Elementos decorativos de fondo -->
+  <div
+    class="absolute top-20 right-0 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl -z-1"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 left-0 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl -z-1"
+  >
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <!-- Contenido de Texto -->
+      <div class="max-w-2xl text-center lg:text-left mx-auto lg:mx-0 fade-in">
+        <div
+          class="inline-block mb-4 px-4 py-1.5 rounded-full bg-teal-800/40 border border-teal-400/30 text-teal-200 text-sm font-medium backdrop-blur-sm"
+        >
+          ✨ Transformando Vidas con Amor
+        </div>
+
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight"
+        >
+          Centro Integral de <br class="hidden lg:block" /> Atención al
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-cyan-400"
+            >TEA y TDAH</span
+          >
+          <span class="block mt-2 text-teal-50">"Josué"</span>
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed font-light"
+        >
+          Una comunidad que <strong class="text-white font-semibold"
+            >entiende, acompaña y transforma</strong
+          >. Un espacio creado con respeto y compromiso para acompañar a niños,
+          jóvenes y sus familias.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+        >
+          <a
+            href="#servicios"
+            class="group relative px-8 py-4 bg-white text-teal-900 font-bold rounded-xl shadow-lg hover:shadow-teal-500/30 transition-all duration-300 hover:-translate-y-1"
+          >
+            <span class="relative z-10">Nuestros Servicios</span>
+            <div
+              class="absolute inset-0 h-full w-full bg-teal-50 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"
+            >
+            </div>
+          </a>
+
+          <a
+            href="#evaluacion"
+            class="group px-8 py-4 bg-teal-600/20 text-white border border-teal-400/30 font-semibold rounded-xl backdrop-blur-sm hover:bg-teal-600/40 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
+          >
+            Solicitar Evaluación
+            <ion-icon
+              name="arrow-forward-outline"
+              class="group-hover:translate-x-1 transition-transform"></ion-icon>
+          </a>
+        </div>
+
+        <!-- Stats Integrados -->
+        <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-8">
+          <div>
+            <div
+              class="text-3xl font-bold text-white flex items-baseline justify-center lg:justify-start"
+            >
+              <span data-target="1">1</span>+
+            </div>
+            <div class="text-sm text-teal-200 mt-1">
+              Años de <br />Experiencia
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-3xl font-bold text-white flex items-baseline justify-center lg:justify-start"
+            >
+              <span data-target="100">100</span>+
+            </div>
+            <div class="text-sm text-teal-200 mt-1">
+              Familias <br />Atendidas
+            </div>
+          </div>
+          <div>
+            <div
+              class="text-3xl font-bold text-white flex items-baseline justify-center lg:justify-start"
+            >
+              <span data-target="4">4</span>+
+            </div>
+            <div class="text-sm text-teal-200 mt-1">
+              Especialistas <br />Dedicados
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen / Visual -->
+      <div class="relative hidden lg:block fade-in delay-200">
+        <div
+          class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-80"
+          >
+          </div>
+          <img
+            src="/assets/image/Centro.jpeg"
+            alt="Instalaciones CIAJET"
+            class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+          />
+
+          <!-- Badge Flotante -->
+          <div
+            class="absolute bottom-6 left-6 z-20 bg-white/95 backdrop-blur-md px-6 py-4 rounded-xl shadow-lg max-w-xs transform transition-transform duration-300 group-hover:translate-y-[-5px]"
+          >
+            <p class="text-teal-900 font-bold text-lg mb-1">¡Bienvenidos!</p>
+            <p class="text-teal-700 text-sm">
+              Un lugar seguro para crecer y aprender juntos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Elemento decorativo detrás de la imagen -->
+        <div
+          class="absolute -top-6 -right-6 w-full h-full border-2 border-teal-400/30 rounded-2xl -z-10"
+        >
+        </div>
+        <div
+          class="absolute -bottom-6 -left-6 w-full h-full border-2 border-white/10 rounded-2xl -z-10"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <script>
-    // Animation Logic for Hero (Counters)
-    document.addEventListener('DOMContentLoaded', () => {
-        function animateCounter(element: Element, target: number, duration = 2000) {
-            let start = 0;
-            const step = target / (duration / 16);
+  // Lógica para contadores animados
+  document.addEventListener("DOMContentLoaded", () => {
+    const animateCounter = (el: Element) => {
+      const target = parseInt(el.getAttribute("data-target") || "0");
+      const duration = 2000;
+      const step = Math.ceil(target / (duration / 16));
+      let current = 0;
 
-            function updateCounter() {
-                start += step;
-                if (start < target) {
-                    element.textContent = Math.floor(start) + '+';
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    element.textContent = target + '+';
-                }
-            }
-            updateCounter();
+      const update = () => {
+        current += step;
+        if (current < target) {
+          el.textContent = current.toString();
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target.toString();
         }
+      };
+      update();
+    };
 
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const targetAttr = entry.target.getAttribute('data-target');
-                    if (targetAttr) {
-                         const target = parseInt(targetAttr);
-                         animateCounter(entry.target, target);
-                         counterObserver.unobserve(entry.target);
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('[data-target]').forEach((element) => {
-            counterObserver.observe(element);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const spans = entry.target.querySelectorAll("[data-target]");
+            spans.forEach(animateCounter);
+            observer.unobserve(entry.target);
+          }
         });
-    });
+      },
+      { threshold: 0.5 },
+    );
+
+    const section = document.querySelector("#home");
+    if (section) observer.observe(section);
+  });
 </script>
