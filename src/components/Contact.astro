@@ -9,42 +9,58 @@
                 Estamos aquí para ayudarte. Escríbenos o visítanos.
             </p>
         </div>
-        <div class="mt-12 grid lg:grid-cols-2 gap-12">
-            <!-- Formulario de Contacto -->
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <form action="#" method="POST">
-                    <div class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
-                            <input type="text" name="name" id="name" autocomplete="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0D8F8F] focus:border-[#0D8F8F]">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
-                            <input type="email" name="email" id="email" autocomplete="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0D8F8F] focus:border-[#0D8F8F]">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0D8F8F] focus:border-[#0D8F8F]"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="w-full text-center px-6 py-3 text-white font-semibold rounded-lg shadow-md transition-colors duration-300" style="background-color: #0A2A4E;">
-                                Enviar Mensaje
-                            </button>
-                        </div>
-                    </div>
-                </form>
+        <div class="mt-16 grid lg:grid-cols-2 gap-12 lg:items-center">
+            <!-- Imagen del Centro -->
+            <div class="relative group rounded-2xl overflow-hidden shadow-2xl">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                <img src="/assets/image/Portada_CIATEJ.png" alt="Portada del Centro Josué" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out">
             </div>
-            <!-- Información y Mapa -->
+
+            <!-- Información -->
             <div class="space-y-8">
                 <div class="space-y-4">
-                    <h3 class="text-xl font-semibold" style="color:#005960">Información de Contacto</h3>
-                        <p class="flex items-center"><ion-icon name="location-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon>Ubicacion: Preguntar por WhatsApp o por llamada</p>
-                        <p class="flex items-center"><ion-icon name="call-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> 9762-3759 || 9202-2859</p>
-                        <p class="flex items-center"><ion-icon name="mail-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> info@ciatej.com</p>
-                        <p class="flex items-center"><ion-icon name="time-outline" class="w-5 h-5 mr-3" style="color:#0D8F8F"></ion-icon> Lunes a Viernes: 7:20 AM - 5:00 PM</p>
+                    <h3 class="text-2xl lg:text-3xl font-bold tracking-tight" style="color:#005960">Estamos más cerca de ti</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Si tienes alguna consulta sobre nuestros servicios, terapias o deseas programar una cita, no dudes en contactarnos a través de los siguientes medios. Nuestro equipo estará encantado de atenderte.
+                    </p>
                 </div>
-                <div class="h-64 bg-gray-200 rounded-lg shadow-inner flex items-center justify-center">
-                    <img src="/assets/image/team/Portada_CIATEJ.png" alt="Portada del Centro Josué" class="rounded-lg shadow-xl">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Ubicacion -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: rgba(13, 143, 143, 0.1);">
+                            <ion-icon name="location-outline" class="w-6 h-6" style="color:#0D8F8F"></ion-icon>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1 text-lg">Ubicación</h4>
+                        <p class="text-gray-600 text-sm">Preguntar por WhatsApp o por llamada</p>
+                    </div>
+                    
+                    <!-- Telefono -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: rgba(13, 143, 143, 0.1);">
+                            <ion-icon name="call-outline" class="w-6 h-6" style="color:#0D8F8F"></ion-icon>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1 text-lg">Teléfonos</h4>
+                        <p class="text-gray-600 text-sm">9202-2859</p>
+                    </div>
+                    
+                    <!-- Correo -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: rgba(13, 143, 143, 0.1);">
+                            <ion-icon name="mail-outline" class="w-6 h-6" style="color:#0D8F8F"></ion-icon>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1 text-lg">Correo Electrónico</h4>
+                        <p class="text-gray-600 text-sm break-all">info@ciatej.com</p>
+                    </div>
+                    
+                    <!-- Horario -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: rgba(13, 143, 143, 0.1);">
+                            <ion-icon name="time-outline" class="w-6 h-6" style="color:#0D8F8F"></ion-icon>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1 text-lg">Horario de Atención</h4>
+                        <p class="text-gray-600 text-sm">Lunes a Viernes<br>7:20 AM - 5:00 PM</p>
+                    </div>
                 </div>
             </div>
         </div>

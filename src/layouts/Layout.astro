@@ -3,10 +3,9 @@ import "../styles/global.css";
 
 interface Props {
   title?: string;
-  imagen?: string;
 }
 
-const { title = "CIAJET - Centro Integral de Atención al TEA y TDAH", imagen } =
+const { title = "CIATEJ - Centro Integral de Atención Terapéutico Josué" } =
   Astro.props;
 ---
 
@@ -16,7 +15,7 @@ const { title = "CIAJET - Centro Integral de Atención al TEA y TDAH", imagen } 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="icon" type="image/png" href={imagen} />
+    <link rel="icon" type="image/PNG" href="/assets/image/Logo_CIATEJ.PNG" />
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
