@@ -1,0 +1,147 @@
+---
+const faqs = [
+  {
+    question: "¿A partir de qué edad atienden en el Centro Josué?",
+    answer: "Brindamos atención especializada a niños, niñas y adolescentes en un rango de edad de 5 a 15 años. Nuestras terapias e instalaciones están adaptadas específicamente para las necesidades de estas etapas del desarrollo."
+  },
+  {
+    question: "¿Necesito tener un diagnóstico médico previo para llevar a mi hijo(a)?",
+    answer: "No es necesario. Muchos padres llegan a nosotros solo con la sospecha o notando que su hijo tiene algún reto en la escuela o en casa. En CIATEJ contamos con el servicio de Evaluación y Diagnóstico donde nuestro equipo determinará si existe alguna condición (TEA, TDAH, etc.) o si solo requiere un apoyo específico."
+  },
+  {
+    question: "¿Cuánto dura cada sesión de terapia y cuántas veces a la semana debe asistir?",
+    answer: "Por lo general, las sesiones terapéuticas tienen una duración de 45 a 50 minutos. La frecuencia semanal (si debe ir 1, 2 o más veces por semana) se determina de manera completamente individualizada tras la evaluación inicial, basándonos en lo que tu hijo realmente necesita."
+  },
+  {
+    question: "¿Los padres participamos en las terapias?",
+    answer: "¡Absolutamente! Consideramos a la familia como el pilar más importante. Dependiendo de la etapa y el tipo de intervención, los padres pueden ingresar a las sesiones para observar, o reciben orientación constante sobre cómo aplicar los mismos ejercicios y estrategias en casa para acelerar el progreso."
+  },
+  {
+    question: "¿Cómo puedo solicitar una primera cita de evaluación?",
+    answer: "Es muy sencillo. Puedes hacer clic en el botón de \"Solicitar Evaluación\" en esta página, llamarnos a nuestros números de contacto, o enviarnos un mensaje por WhatsApp. Nuestro equipo te guiará con calidez en cada paso del proceso."
+  }
+];
+---
+
+<section id="faq" class="py-16 lg:py-24 bg-gray-50/50 relative">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div class="text-center fade-in">
+            <h2 class="text-4xl font-bold tracking-tight title-shadow mb-4">
+                Preguntas <span class="text-gradient">Frecuentes (FAQ)</span>
+            </h2>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed">
+                Resolvemos tus dudas para que sientas la confianza de dar el primer paso.
+            </p>
+        </div>
+
+        <div class="mt-12 space-y-4">
+            {faqs.map((faq, index) => (
+                <details class="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover-lift scroll-animate">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-[#0A2A4E]">
+                        <span class="font-bold">{faq.question}</span>
+                        <span class="transition group-open:rotate-180" style="color: #0D8F8F;">
+                            <ion-icon name="chevron-down-outline" class="w-6 h-6"></ion-icon>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed bg-white">
+                        <p>{faq.answer}</p>
+                    </div>
+                </details>
+            ))}
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        class AnimatedAccordion {
+            constructor(el, group) {
+                this.el = el;
+                this.group = group; // Array de todos los acordeones
+                this.summary = el.querySelector('summary');
+                this.content = el.querySelector('div');
+                this.animation = null;
+                this.isClosing = false;
+                this.isExpanding = false;
+                
+                this.summary.addEventListener('click', (e) => this.onClick(e));
+            }
+
+            onClick(e) {
+                e.preventDefault();
+                this.el.style.overflow = 'hidden';
+                if (this.isClosing || !this.el.open) {
+                    this.open();
+                } else if (this.isExpanding || this.el.open) {
+                    this.shrink();
+                }
+            }
+
+            shrink() {
+                this.isClosing = true;
+                const startHeight = `${this.el.offsetHeight}px`;
+                const endHeight = `${this.summary.offsetHeight}px`;
+                if (this.animation) this.animation.cancel();
+                
+                this.animation = this.el.animate({
+                    height: [startHeight, endHeight]
+                }, {
+                    duration: 350,
+                    easing: 'ease-in-out'
+                });
+                
+                this.animation.onfinish = () => this.onAnimationFinish(false);
+                this.animation.oncancel = () => this.isClosing = false;
+            }
+
+            open() {
+                // Cerrar otros acordeones abiertos
+                this.group.forEach(accordion => {
+                    if (accordion !== this && accordion.el.open && !accordion.isClosing) {
+                        accordion.shrink();
+                    }
+                });
+
+                this.el.style.height = `${this.el.offsetHeight}px`;
+                this.el.open = true;
+                
+                window.requestAnimationFrame(() => {
+                    this.isExpanding = true;
+                    const startHeight = `${this.el.offsetHeight}px`;
+                    const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
+                    
+                    if (this.animation) this.animation.cancel();
+                    
+                    this.animation = this.el.animate({
+                        height: [startHeight, endHeight]
+                    }, {
+                        duration: 350,
+                        easing: 'ease-in-out'
+                    });
+                    
+                    this.animation.onfinish = () => this.onAnimationFinish(true);
+                    this.animation.oncancel = () => this.isExpanding = false;
+                });
+            }
+
+            onAnimationFinish(open) {
+                this.el.open = open;
+                this.animation = null;
+                this.isClosing = false;
+                this.isExpanding = false;
+                this.el.style.height = this.el.style.overflow = '';
+            }
+        }
+
+        const faqsElements = document.querySelectorAll('#faq details');
+        const accordions = [];
+        faqsElements.forEach(el => accordions.push(new AnimatedAccordion(el, accordions)));
+    });
+</script>
+
+<style>
+    /* Ocultar el marcador nativo del details en navegadores webkit (Chrome, Safari, etc.) */
+    details > summary::-webkit-details-marker {
+        display: none;
+    }
+</style>
