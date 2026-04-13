@@ -3,10 +3,15 @@ import "../styles/global.css";
 
 interface Props {
   title?: string;
+  imagen?: string;
 }
 
-const { title = "CIATEJ - Centro Integral de Atención Terapéutico Josué" } =
-  Astro.props;
+const { 
+  title = "CIATEJ - Centro Integral de Atención Terapéutico Josué",
+  imagen = "/assets/image/Logo_CIATEJ.PNG"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.ciatej.com');
 ---
 
 <!doctype html>
@@ -15,6 +20,28 @@ const { title = "CIATEJ - Centro Integral de Atención Terapéutico Josué" } =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="description" content="Centro Integral de Atención Terapéutico Josué (CIATEJ). Ofrecemos diagnóstico, terapia y apoyo especializado en TEA y TDAH." />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Centro Integral de Atención Terapéutico Josué (CIATEJ). Ofrecemos diagnóstico, terapia y apoyo especializado en TEA y TDAH." />
+    <meta property="og:image" content={new URL(imagen, Astro.site || 'https://www.ciatej.com')} />
+
+    <!-- Schema.org Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "CIATEJ - Centro Integral de Atención Terapéutico Josué",
+      "url": "https://www.ciatej.com",
+      "logo": "https://www.ciatej.com/assets/image/Logo_CIATEJ.PNG",
+      "description": "Centro integral especializado en el diagnóstico, terapia y atención del TEA y TDAH."
+    })}></script>
+
     <link rel="icon" type="image/PNG" href="/assets/image/Logo_CIATEJ.PNG" />
 
     <!-- Google Fonts: Inter -->
