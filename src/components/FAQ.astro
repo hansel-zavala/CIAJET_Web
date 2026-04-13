@@ -1,8 +1,8 @@
 ---
 const faqs = [
   {
-    question: "¿A partir de qué edad atienden en el Centro Josué?",
-    answer: "Brindamos atención especializada a niños, niñas y adolescentes en un rango de edad de 5 a 15 años. Nuestras terapias e instalaciones están adaptadas específicamente para las necesidades de estas etapas del desarrollo."
+    question: "¿A partir de qué edad atienden en CIATEJ?",
+    answer: "Brindamos atención especializada a niños, niñas y adolescentes en un rango de edad de 3 a 15 años. Nuestras terapias e instalaciones están adaptadas específicamente para las necesidades de estas etapas del desarrollo."
   },
   {
     question: "¿Necesito tener un diagnóstico médico previo para llevar a mi hijo(a)?",
@@ -55,19 +55,27 @@ const faqs = [
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         class AnimatedAccordion {
-            constructor(el, group) {
+            el: HTMLDetailsElement;
+            group: AnimatedAccordion[];
+            summary: HTMLElement;
+            content: HTMLElement;
+            animation: Animation | null;
+            isClosing: boolean;
+            isExpanding: boolean;
+
+            constructor(el: HTMLDetailsElement, group: AnimatedAccordion[]) {
                 this.el = el;
                 this.group = group; // Array de todos los acordeones
-                this.summary = el.querySelector('summary');
-                this.content = el.querySelector('div');
+                this.summary = el.querySelector('summary') as HTMLElement;
+                this.content = el.querySelector('div') as HTMLElement;
                 this.animation = null;
                 this.isClosing = false;
                 this.isExpanding = false;
                 
-                this.summary.addEventListener('click', (e) => this.onClick(e));
+                this.summary.addEventListener('click', (e: MouseEvent) => this.onClick(e));
             }
 
-            onClick(e) {
+            onClick(e: Event) {
                 e.preventDefault();
                 this.el.style.overflow = 'hidden';
                 if (this.isClosing || !this.el.open) {
@@ -124,7 +132,7 @@ const faqs = [
                 });
             }
 
-            onAnimationFinish(open) {
+            onAnimationFinish(open: boolean) {
                 this.el.open = open;
                 this.animation = null;
                 this.isClosing = false;
@@ -134,8 +142,8 @@ const faqs = [
         }
 
         const faqsElements = document.querySelectorAll('#faq details');
-        const accordions = [];
-        faqsElements.forEach(el => accordions.push(new AnimatedAccordion(el, accordions)));
+        const accordions: AnimatedAccordion[] = [];
+        faqsElements.forEach((el) => accordions.push(new AnimatedAccordion(el as HTMLDetailsElement, accordions)));
     });
 </script>
 
