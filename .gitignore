@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 
 legacy_site/
+
+.agents
+skills-lock.json
