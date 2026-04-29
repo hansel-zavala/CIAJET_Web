@@ -509,6 +509,17 @@ section {
   scroll-margin-top: 100px;
 }
 
+/* Accesibilidad: visibilidad del foco y márgenes de scroll */
+:focus-visible {
+  outline: 2px solid #005960;
+  outline-offset: 2px;
+}
+
+:focus {
+  scroll-margin-top: 80px;
+  scroll-margin-bottom: 60px;
+}
+
 /* Transiciones para el comportamiento del header */
 header {
   transition: transform 0.3s ease-in-out;
