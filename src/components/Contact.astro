@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import portada from "../assets/image/Portada_CIATEJ.png";
 ---
 
 <!-- ========== SECCIÓN CONTACTO ========== -->
@@ -23,8 +24,8 @@
                     class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"
                 >
                 </div>
-                <img
-                    src="/assets/image/Portada_CIATEJ.png"
+                <Image
+                    src={portada}
                     alt="Instalaciones del Centro Integral de Atención Terapéutico Josué (CIATEJ) en Olanchito"
                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
                     loading="lazy"

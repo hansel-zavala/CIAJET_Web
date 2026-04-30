@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import team from "../assets/image/team/Equipo.jpg";
 ---
 <!-- ========== SECCIÓN QUIÉNES SOMOS ========== -->
 <section id="quienes-somos" class="py-16 lg:py-24">
@@ -18,7 +20,7 @@
                 
             </div>
             <div>
-                <img src="/assets/image/team/Equipo.jpg" alt="Equipo de profesionales del Centro Integral de Atención Terapéutico Josué (CIATEJ) en Olanchito" class="rounded-lg shadow-xl" loading="lazy">
+                <Image src={team} alt="Equipo de profesionales del Centro Integral de Atención Terapéutico Josué (CIATEJ) en Olanchito" class="rounded-lg shadow-xl" loading="lazy">
             </div>
         </div>
     </div>

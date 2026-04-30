@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import "../styles/global.css";
 
 interface Props {
@@ -22,6 +23,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.ciat
     <title>{title}</title>
     <meta name="description" content="Centro Integral de Atención Terapéutico Josué (CIATEJ) en Honduras. Ofrecemos diagnóstico, terapia y apoyo especializado en TEA y TDAH. ¡Agenda tu evaluación hoy!" />
     <meta name="keywords" content="CIATEJ, Terapia TEA Honduras, TDAH, Educación Especial, Psicología Infantil, Terapia de Lenguaje, Autismo Olanchito, Centro Terapéutico Josué" />
+    <ClientRouter />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />

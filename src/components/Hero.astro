@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import heroImage from '../assets/image/Hero_pagina.png';
 ---
 
 <!-- ========== SECCIÓN HERO (INICIO) ========== -->
@@ -13,8 +14,8 @@
       class="absolute inset-0 bg-gradient-to-br from-[#0f172a]/95 via-[#005960]/90 to-[#0d8f8f]/85 z-10"
     >
     </div>
-    <img
-      src="/assets/image/Hero_pagina.png"
+    <Image
+      src={heroImage}
       alt="Instalaciones y equipo de CIATEJ, centro especializado en TEA y TDAH en Honduras"
       class="w-full h-full object-cover object-center"
       fetchpriority="high"
@@ -130,8 +131,8 @@
             class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-80"
           >
           </div>
-          <img
-            src="/assets/image/Hero_pagina.png"
+          <Image
+            src={heroImage}
             alt="Especialistas en terapia infantil y educación especial de CIATEJ"
             class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
             fetchpriority="high"
