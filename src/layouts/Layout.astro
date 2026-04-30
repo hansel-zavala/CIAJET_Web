@@ -9,7 +9,7 @@ interface Props {
 
 const { 
   title = "CIATEJ - Centro Integral de Atención Terapéutico Josué",
-  imagen = "/assets/image/Logo_CIATEJ.PNG"
+  imagen = "/favicon.svg" // fallback por defecto si no se pasa la imagen
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.ciatej.com');
@@ -41,12 +41,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.ciat
       "@type": "MedicalClinic",
       "name": "CIATEJ - Centro Integral de Atención Terapéutico Josué",
       "url": "https://www.ciatej.com",
-      "logo": "https://www.ciatej.com/assets/image/Logo_CIATEJ.PNG",
+      "logo": new URL(imagen, Astro.site || 'https://www.ciatej.com').toString(),
       "description": "Centro integral especializado en el diagnóstico, terapia y atención del TEA y TDAH.",
       "keywords": "Terapia infantil, Autismo, TDAH, Educación Especial, Psicología, Terapia de Lenguaje, Olanchito, Honduras"
     })}></script>
 
-    <link rel="icon" type="image/PNG" href="/assets/image/Logo_CIATEJ.PNG" />
+    <link rel="icon" type="image/png" href={imagen} />
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
