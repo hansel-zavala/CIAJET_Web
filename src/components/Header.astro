@@ -4,10 +4,10 @@ import logoImage from '../assets/image/LogoCIATEJ.png';
 ---
 
 <header
-  class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm translate-y-0 transition-transform duration-300"
+  class="fixed top-3 left-0 right-0 z-50 translate-y-0 transition-transform duration-300"
 >
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+  <div class="container mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="liquid-card flex items-center justify-between h-16 px-3 sm:px-5 rounded-full">
       <!-- Logo -->
       <a
         href="#home"
@@ -17,41 +17,41 @@ import logoImage from '../assets/image/LogoCIATEJ.png';
         <Image
           src={logoImage}
           alt="Logo del Centro Integral de Atención Terapéutico Josué (CIATEJ)"
-          class="w-12 h-12 rounded-full shadow-xl"
+          class="w-11 h-11 rounded-full shadow-lg bg-white"
         />
-        <span>CIATEJ</span>
+        <span class="text-lg sm:text-xl tracking-tight">CIATEJ</span>
       </a>
 
       <!-- Navegación para escritorio -->
       <nav class="hidden lg:flex items-center space-x-4 xl:space-x-8">
         <a
           href="#home"
-          class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link"
+          class="text-sm text-slate-600 hover:text-[#063b45] transition-colors duration-300 nav-link"
           >Inicio</a
         >
         <a
           href="#quienes-somos"
-          class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link"
+          class="text-sm text-slate-600 hover:text-[#063b45] transition-colors duration-300 nav-link"
           >Quiénes Somos</a
         >
         <a
           href="#servicios"
-          class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link"
+          class="text-sm text-slate-600 hover:text-[#063b45] transition-colors duration-300 nav-link"
           >Servicios</a
         >
         <a
           href="#equipo"
-          class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link"
+          class="text-sm text-slate-600 hover:text-[#063b45] transition-colors duration-300 nav-link"
           >Nuestro Equipo</a
         >
         <a
           href="#evaluacion"
-          class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link"
+          class="text-sm text-slate-600 hover:text-[#063b45] transition-colors duration-300 nav-link"
           >Solicitud de Evaluación</a
         >
         <a
           href="#contacto"
-          class="text-gray-600 hover:text-[#0D8F8F] transition-colors duration-300 nav-link"
+          class="text-sm text-slate-600 hover:text-[#063b45] transition-colors duration-300 nav-link"
           >Contacto</a
         >
       </nav>
@@ -60,7 +60,7 @@ import logoImage from '../assets/image/LogoCIATEJ.png';
       <div class="lg:hidden relative z-50">
         <button
           id="mobile-menu-button"
-          class="text-gray-600 hover:text-[#0D8F8F] focus:outline-none"
+          class="text-[#063b45] hover:text-[#0D8F8F] focus:outline-none"
           aria-label="Abrir menú de navegación"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -74,28 +74,28 @@ import logoImage from '../assets/image/LogoCIATEJ.png';
   <!-- Fondo oscuro detrás del menú -->
   <div
     id="mobile-menu-backdrop"
-    class="hidden lg:hidden fixed top-16 left-0 bottom-0 w-[40vw] h-screen z-30 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
+    class="hidden lg:hidden fixed top-0 left-0 bottom-0 w-screen h-screen z-30 bg-[#063b45]/35 backdrop-blur-sm transition-opacity duration-300"
   >
   </div>
 
   <!-- Menú desplegable para móvil -->
   <div
     id="mobile-menu"
-    class="hidden lg:hidden fixed top-16 right-0 bottom-0 h-screen w-[60vw] z-40 bg-gradient-to-br from-[#0A2A4E] via-[#005960] to-[#0D8F8F] shadow-2xl"
+    class="hidden lg:hidden fixed top-20 right-3 bottom-3 h-[calc(100vh-6rem)] w-[min(86vw,24rem)] z-40 liquid-card shadow-2xl"
   >
     <div class="flex flex-col h-full overflow-y-auto">
       <!-- Header del menú con logo -->
       <div
-        class="flex items-center justify-center py-6 px-6 border-b border-white/20"
+        class="flex items-center justify-center py-6 px-6 border-b border-[#0b8f88]/15"
       >
         <Image
           src={logoImage}
           alt="Logo de CIATEJ en menú móvil"
           class="w-16 h-16 rounded-full bg-white p-2 shadow-lg"
         />
-        <div class="ml-4 text-white">
+        <div class="ml-4 text-[#063b45]">
           <h2 class="text-xl font-bold">CIATEJ</h2>
-          <p class="text-sm opacity-80">
+          <p class="text-sm opacity-75">
             Centro Integral de Atención Terapéutico Josué
           </p>
         </div>
@@ -105,14 +105,14 @@ import logoImage from '../assets/image/LogoCIATEJ.png';
       <div class=" px-6 py-5 space-y-2">
         <a
           href="#home"
-          class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link"
+          class="flex items-center px-4 py-3 rounded-2xl bg-white/60 text-[#063b45] hover:bg-white transition-all duration-300 nav-link"
         >
           <ion-icon name="home-outline" class="w-6 h-6 mr-4"></ion-icon>
           <span class="font-medium">Inicio</span>
         </a>
         <a
           href="#quienes-somos"
-          class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link"
+          class="flex items-center px-4 py-3 rounded-2xl bg-white/60 text-[#063b45] hover:bg-white transition-all duration-300 nav-link"
         >
           <ion-icon name="information-circle-outline" class="w-6 h-6 mr-4"
           ></ion-icon>
@@ -120,28 +120,28 @@ import logoImage from '../assets/image/LogoCIATEJ.png';
         </a>
         <a
           href="#servicios"
-          class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link"
+          class="flex items-center px-4 py-3 rounded-2xl bg-white/60 text-[#063b45] hover:bg-white transition-all duration-300 nav-link"
         >
           <ion-icon name="medical-outline" class="w-6 h-6 mr-4"></ion-icon>
           <span class="font-medium">Servicios</span>
         </a>
         <a
           href="#equipo"
-          class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link"
+          class="flex items-center px-4 py-3 rounded-2xl bg-white/60 text-[#063b45] hover:bg-white transition-all duration-300 nav-link"
         >
           <ion-icon name="people-outline" class="w-6 h-6 mr-4"></ion-icon>
           <span class="font-medium">Nuestro Equipo</span>
         </a>
         <a
           href="#evaluacion"
-          class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link"
+          class="flex items-center px-4 py-3 rounded-2xl bg-white/60 text-[#063b45] hover:bg-white transition-all duration-300 nav-link"
         >
           <ion-icon name="clipboard-outline" class="w-6 h-6 mr-4"></ion-icon>
           <span class="font-medium">Solicitud de Evaluación</span>
         </a>
         <a
           href="#contacto"
-          class="flex items-center px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300 nav-link"
+          class="flex items-center px-4 py-3 rounded-2xl bg-white/60 text-[#063b45] hover:bg-white transition-all duration-300 nav-link"
         >
           <ion-icon name="call-outline" class="w-6 h-6 mr-4"></ion-icon>
           <span class="font-medium">Contacto</span>
@@ -149,8 +149,8 @@ import logoImage from '../assets/image/LogoCIATEJ.png';
       </div>
 
       <!-- Información de contacto -->
-      <div class="px-5 pb-6 py-55">
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+      <div class="px-5 pb-6 mt-auto">
+        <div class="bg-[#063b45] rounded-2xl p-4">
           <h3 class="text-white font-semibold mb-3 text-center">
             Contacto Rápido
           </h3>

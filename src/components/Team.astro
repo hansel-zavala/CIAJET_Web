@@ -4,80 +4,34 @@ import olgaImg from '../assets/image/team/OlgaCIATEJ.jpeg';
 import deysiImg from '../assets/image/team/DeysiCIATEJ.jpeg';
 import gustavoImg from '../assets/image/team/GustavoCIATEJ.jpeg';
 import hanselImg from '../assets/image/team/HanselCIATEJ.jpeg';
+
+const team = [
+  [olgaImg, "Olga Bidilia Zavala Diaz", "Licenciada en Educación Especial", "Especialista en Terapia de lenguaje"],
+  [deysiImg, "Deysi Almendares", "Licenciada en Educación Especial", "Especialista en Terapia de lenguaje"],
+  [gustavoImg, "Gustavo Adolfo Rodriguez Aleman", "Licenciado en Psicología", "Especialista en Terapia psicológica"],
+  [hanselImg, "Hansel Samir Martinez Zavala", "Ingeniero en Informática", "Administrador"],
+];
 ---
-<!-- ========== SECCIÓN NUESTRO EQUIPO ========== -->
-<section id="equipo" class="py-16 lg:py-24 bg-pattern relative">
-    <div class="floating-shape shape-3 hidden lg:block"></div>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center fade-in">
-            <h2 class="text-4xl font-bold tracking-tight title-shadow mb-4">
-                <span class="text-gradient">Nuestro</span> Equipo
-            </h2>
-            <p class="mt-4 max-w-3xl mx-auto text-xl text-gray-600 leading-relaxed">
-                <strong class="text-[#0A2A4E]">Profesionales especializados</strong> comprometidos con brindar la mejor atención a cada persona y familia
-            </p>
-        </div>
 
-        <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Psicólogo 1 -->
-            <div class="team-card p-6 rounded-2xl hover-lift text-center scroll-animate">
-                <div class="team-avatar w-28 h-28 rounded-full mx-auto mb-6 overflow-hidden ring-4 ring-[#0D8F8F]/20">
-                    <Image src={olgaImg} alt="Olga Zavala, Licenciada en Educación Especial y Terapia de Lenguaje en CIATEJ" class="w-full h-full object-cover" loading="lazy" />
-                </div>
-                <h3 class="text-xl font-bold mb-2 text-gradient">Olga Bidilia Zavala Diaz</h3>
-                <p class="text-[#005960] font-semibold mb-2">Licenciada en Educación Especial</p>
-                <p class="text-sm text-gray-600 leading-relaxed">Especialista en Terapia de lenguaje</p>
-                <div class="mt-4 flex justify-center space-x-3">
-                    <div class="w-2 h-2 bg-[#0D8F8F] rounded-full"></div>
-                    <div class="w-2 h-2 bg-[#005960] rounded-full"></div>
-                    <div class="w-2 h-2 bg-[#0A2A4E] rounded-full"></div>
-                </div>
-            </div>
-
-            <!-- Psicólogo 2 -->
-            <div class="team-card p-6 rounded-2xl hover-lift text-center scroll-animate">
-                <div class="team-avatar w-28 h-28 rounded-full mx-auto mb-6 overflow-hidden ring-4 ring-[#0D8F8F]/20">
-                    <Image src={deysiImg} alt="Deysi Almendares, Licenciada en Educación Especial y Terapia de Lenguaje en CIATEJ" class="w-full h-full object-cover" loading="lazy" />
-                </div>
-                <h3 class="text-xl font-bold mb-2 text-gradient">Deysi Almendares</h3>
-                <p class="text-[#005960] font-semibold mb-2">Licenciada en Educación Especial</p>
-                <p class="text-sm text-gray-600 leading-relaxed">Especialista en Terapia de lenguaje</p>
-                <div class="mt-4 flex justify-center space-x-3">
-                    <div class="w-2 h-2 bg-[#0D8F8F] rounded-full"></div>
-                    <div class="w-2 h-2 bg-[#005960] rounded-full"></div>
-                    <div class="w-2 h-2 bg-[#0A2A4E] rounded-full"></div>
-                </div>
-            </div>
-
-            <!-- Terapeuta 1 -->
-            <div class="team-card p-6 rounded-2xl hover-lift text-center scroll-animate">
-                <div class="team-avatar w-28 h-28 rounded-full mx-auto mb-6 overflow-hidden ring-4 ring-[#0D8F8F]/20">
-                    <Image src={gustavoImg} alt="Gustavo Rodriguez, Licenciado en Psicología en CIATEJ" class="w-full h-full object-cover" loading="lazy" />
-                </div>
-                <h3 class="text-xl font-bold mb-2 text-gradient">Gustavo Adolfo Rodriguez Aleman</h3>
-                <p class="text-[#005960] font-semibold mb-2">Licenciado en Psicología</p>
-                <p class="text-sm text-gray-600 leading-relaxed">Especialista en Terapia psicológica</p>
-                <div class="mt-4 flex justify-center space-x-3">
-                    <div class="w-2 h-2 bg-[#0D8F8F] rounded-full"></div>
-                    <div class="w-2 h-2 bg-[#005960] rounded-full"></div>
-                    <div class="w-2 h-2 bg-[#0A2A4E] rounded-full"></div>
-                </div>
-            </div>
-
-            <!-- Terapeuta 2 -->
-            <div class="team-card p-6 rounded-2xl hover-lift text-center scroll-animate">
-                <div class="team-avatar w-28 h-28 rounded-full mx-auto mb-6 overflow-hidden ring-4 ring-[#0D8F8F]/20">
-                    <Image src={hanselImg} alt="Hansel Zavala, Administrador de CIATEJ" class="w-full h-full object-cover" loading="lazy" />
-                </div>
-                <h3 class="text-xl font-bold mb-2 text-gradient">Hansel Samir Martinez Zavala</h3>
-                <p class="text-[#005960] font-semibold mb-2">Ingeniero en Informática</p>
-                <p class="text-sm text-gray-600 leading-relaxed">Administrador</p>
-                <div class="mt-4 flex justify-center space-x-3">
-                    <div class="w-2 h-2 bg-[#0D8F8F] rounded-full"></div>
-                    <div class="w-2 h-2 bg-[#005960] rounded-full"></div>
-                    <div class="w-2 h-2 bg-[#0A2A4E] rounded-full"></div>
-                </div>
-            </div>
-        </div>
+<section id="equipo" class="section-shell bg-[#f3fbf8] bg-pattern">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <span class="section-kicker">Nuestro equipo</span>
+      <h2 class="section-title mt-5">Profesionales que escuchan antes de intervenir.</h2>
+      <p class="section-lead mt-6">Un equipo comprometido con brindar atención clara, humana y especializada a cada familia.</p>
     </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {team.map(([image, name, role, detail]) => (
+        <article class="team-card p-5 hover-lift text-center scroll-animate">
+          <div class="team-avatar w-32 h-32 rounded-[2rem] mx-auto mb-6 overflow-hidden ring-1 ring-[#0b8f88]/15">
+            <Image src={image} alt={`${name}, ${role} en CIATEJ`} class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <h3 class="text-lg font-extrabold text-[#063b45] mb-2">{name}</h3>
+          <p class="text-[#0b8f88] font-bold text-sm mb-2">{role}</p>
+          <p class="text-sm text-slate-600 leading-relaxed">{detail}</p>
+        </article>
+      ))}
+    </div>
+  </div>
 </section>

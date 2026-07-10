@@ -3,173 +3,89 @@ import { Image } from 'astro:assets';
 import heroImage from '../assets/image/HeroCIATEJ.png';
 ---
 
-<!-- ========== SECCIÓN HERO (INICIO) ========== -->
-<section
-  id="home"
-  class="relative pt-32 pb-20 lg:pt-35 lg:pb-35 overflow-hidden"
->
-  <!-- Background con superposición mejorada -->
+<section id="home" class="relative min-h-screen pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
   <div class="absolute inset-0 z-0">
-    <div
-      class="absolute inset-0 bg-gradient-to-br from-[#0f172a]/95 via-[#005960]/90 to-[#0d8f8f]/85 z-10"
-    >
-    </div>
     <Image
       src={heroImage}
       alt="Instalaciones y equipo de CIATEJ, centro especializado en TEA y TDAH en Honduras"
-      class="w-full h-full object-cover object-center"
+      class="w-full h-full object-cover object-center opacity-20"
       fetchpriority="high"
     />
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(190,238,232,.95),transparent_30rem),linear-gradient(135deg,#f7fbfa_0%,#e9faf5_42%,#ffffff_100%)]"></div>
+    <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
   </div>
 
-  <!-- Elementos decorativos de fondo -->
-  <div
-    class="absolute top-20 right-0 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl -z-1"
-  >
-  </div>
-  <div
-    class="absolute bottom-0 left-0 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl -z-1"
-  >
-  </div>
+  <div class="absolute top-24 right-[-7rem] w-[30rem] h-[30rem] bg-teal-300/30 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-10 left-[-6rem] w-80 h-80 bg-cyan-200/50 rounded-full blur-3xl"></div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-      <!-- Contenido de Texto -->
-      <div class="max-w-2xl text-center lg:text-left mx-auto lg:mx-0 fade-in">
-        <div
-          class="inline-block mb-4 px-4 py-1.5 rounded-full bg-teal-800/40 border border-teal-400/30 text-teal-200 text-sm font-medium backdrop-blur-sm"
-        >
-          Transformando Vidas con Amor
-        </div>
+    <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-14 items-center">
+      <div class="max-w-3xl text-center lg:text-left mx-auto lg:mx-0 fade-in">
+        <div class="section-kicker mb-6">Atención infantil especializada</div>
 
-        <h1
-          class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight"
-        >
-          Centro Integral de <br class="hidden lg:block" /> Atención
-          <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-cyan-400"
-            >Terapéutico</span
-          >
-          <span class="block mt-2 text-teal-50">"Josué"</span>
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.06em] text-[#102f3a] mb-7 leading-[0.95]">
+          Un lugar seguro para crecer a tu propio ritmo.
         </h1>
 
-        <p
-          class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed font-light"
-        >
-          Una comunidad que <strong class="text-white font-semibold"
-            >entiende, acompaña y transforma</strong
-          >. Un espacio creado con respeto y compromiso para acompañar a niños,
-          jóvenes y sus familias.
+        <p class="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          Centro Integral de Atención Terapéutico Josué acompaña a niños, jóvenes y familias con evaluación, terapia y orientación para TEA, TDAH, lenguaje, aprendizaje y neurodesarrollo.
         </p>
 
-        <div
-          class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-        >
-          <a
-            href="#servicios"
-            class="group relative px-8 py-4 bg-white text-teal-900 font-bold rounded-xl shadow-lg hover:shadow-teal-500/30 transition-all duration-300 hover:-translate-y-1"
-          >
-            <span class="relative z-10">Nuestros Servicios</span>
-            <div
-              class="absolute inset-0 h-full w-full bg-teal-50 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"
-            >
-            </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="#servicios" class="btn-modern btn-filled">
+            Nuestros Servicios
           </a>
-
-          <a
-            href="#evaluacion"
-            class="group px-8 py-4 bg-teal-600/20 text-white border border-teal-400/30 font-semibold rounded-xl backdrop-blur-sm hover:bg-teal-600/40 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
-          >
+          <a href="#evaluacion" class="group btn-modern btn-ghost">
             Solicitar Evaluación
-            <ion-icon
-              name="arrow-forward-outline"
-              class="group-hover:translate-x-1 transition-transform" aria-hidden="true"></ion-icon>
+            <ion-icon name="arrow-forward-outline" class="group-hover:translate-x-1 transition-transform" aria-hidden="true"></ion-icon>
           </a>
         </div>
 
-        <!-- Stats Integrados -->
-        <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-8">
-          <div>
-            <div
-              class="text-3xl font-bold text-white flex items-baseline justify-center lg:justify-start"
-            >
-              <span data-target="1">1</span>+
-            </div>
-            <div class="text-sm text-teal-200 mt-1">
-              Años de <br />Experiencia
-            </div>
+        <div class="mt-12 grid grid-cols-3 gap-3 sm:gap-5">
+          <div class="soft-card p-4 text-center lg:text-left">
+            <div class="text-2xl sm:text-3xl font-extrabold text-[#063b45]"><span data-target="1">1</span>+</div>
+            <div class="text-xs sm:text-sm text-slate-500 mt-1">Años de experiencia</div>
           </div>
-          <div>
-            <div
-              class="text-3xl font-bold text-white flex items-baseline justify-center lg:justify-start"
-            >
-              <span data-target="100">100</span>+
-            </div>
-            <div class="text-sm text-teal-200 mt-1">
-              Familias <br />Atendidas
-            </div>
+          <div class="soft-card p-4 text-center lg:text-left">
+            <div class="text-2xl sm:text-3xl font-extrabold text-[#063b45]"><span data-target="100">100</span>+</div>
+            <div class="text-xs sm:text-sm text-slate-500 mt-1">Familias atendidas</div>
           </div>
-          <div>
-            <div
-              class="text-3xl font-bold text-white flex items-baseline justify-center lg:justify-start"
-            >
-              <span data-target="3">3</span>+
-            </div>
-            <div class="text-sm text-teal-200 mt-1">
-              Especialistas <br />Dedicados
-            </div>
+          <div class="soft-card p-4 text-center lg:text-left">
+            <div class="text-2xl sm:text-3xl font-extrabold text-[#063b45]"><span data-target="3">3</span>+</div>
+            <div class="text-xs sm:text-sm text-slate-500 mt-1">Especialistas</div>
           </div>
         </div>
       </div>
 
-      <!-- Imagen / Visual -->
-      <div class="relative hidden lg:block fade-in delay-200">
-        <div
-          class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group"
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-80"
-          >
-          </div>
+      <div class="relative fade-in delay-200">
+        <div class="liquid-card relative overflow-hidden p-3 group">
+          <div class="absolute inset-3 rounded-[1.5rem] bg-gradient-to-t from-[#063b45]/45 to-transparent z-10 transition-opacity duration-300"></div>
           <Image
             src={heroImage}
             alt="Especialistas en terapia infantil y educación especial de CIATEJ"
-            class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+            class="w-full aspect-[4/3] object-cover rounded-[1.5rem] transform transition-transform duration-700 group-hover:scale-[1.03]"
             fetchpriority="high"
           />
 
-          <!-- Badge Flotante -->
-          <div
-            class="absolute bottom-6 left-6 z-20 bg-white/95 backdrop-blur-md px-6 py-4 rounded-xl shadow-lg max-w-xs transform transition-transform duration-300 group-hover:translate-y-[-5px]"
-          >
-            <p class="text-teal-900 font-bold text-lg mb-1">¡Bienvenidos!</p>
-            <p class="text-teal-700 text-sm">
-              Un lugar seguro para crecer y aprender juntos.
-            </p>
+          <div class="absolute bottom-7 left-7 right-7 sm:right-auto z-20 bg-white/88 backdrop-blur-md px-5 py-4 rounded-2xl shadow-lg max-w-xs transform transition-transform duration-300 group-hover:translate-y-[-5px]">
+            <p class="text-[#063b45] font-bold text-lg mb-1">Atención con calma</p>
+            <p class="text-slate-600 text-sm">Evaluamos, explicamos y acompañamos cada paso con respeto.</p>
           </div>
         </div>
 
-        <!-- Elemento decorativo detrás de la imagen -->
-        <div
-          class="absolute -top-6 -right-6 w-full h-full border-2 border-teal-400/30 rounded-2xl -z-10"
-        >
-        </div>
-        <div
-          class="absolute -bottom-6 -left-6 w-full h-full border-2 border-white/10 rounded-2xl -z-10"
-        >
-        </div>
+        <div class="absolute -top-5 -right-5 w-full h-full border border-teal-500/20 rounded-[2rem] -z-10"></div>
+        <div class="absolute -bottom-5 -left-5 w-full h-full border border-white rounded-[2rem] -z-10"></div>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  // Lógica para contadores animados
   document.addEventListener("DOMContentLoaded", () => {
     const animateCounter = (el: Element) => {
       const target = parseInt(el.getAttribute("data-target") || "0");
-      const duration = 2000;
-      const step = Math.ceil(target / (duration / 16));
+      const duration = 1600;
+      const step = Math.max(1, Math.ceil(target / (duration / 16)));
       let current = 0;
 
       const update = () => {
@@ -184,18 +100,14 @@ import heroImage from '../assets/image/HeroCIATEJ.png';
       update();
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const spans = entry.target.querySelectorAll("[data-target]");
-            spans.forEach(animateCounter);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 },
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll("[data-target]").forEach(animateCounter);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
 
     const section = document.querySelector("#home");
     if (section) observer.observe(section);

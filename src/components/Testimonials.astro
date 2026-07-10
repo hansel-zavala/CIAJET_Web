@@ -1,106 +1,43 @@
 ---
+const testimonials = [
+  ["MR", "Daniela Rodríguez", "Madre de paciente", "Yo nunca imaginé que encontraría un lugar donde mi hijo se sintiera comprendido y apoyado. Gracias al equipo de CIATEJ, hemos visto avances significativos."],
+  ["CL", "Carlos López", "Padre de paciente", "Yo matricule a mi hijo en CIATEJ,desde el momento uno mi hijo a tenido grandes cambios, los recomiento 100%."],
+  ["AG", "Guadalupe García", "Madre de paciente", "La atención personalizada y el seguimiento continuo marcaron una diferencia en el desarrollo de nuestra hija."],
+];
 ---
-<!-- ========== SECCIÓN TESTIMONIOS ========== -->
-<section class="py-16 lg:py-24 bg-gradient-to-br from-blue-50 to-teal-50 relative overflow-hidden">
-    <div class="floating-shape shape-1 hidden lg:block opacity-20"></div>
-    <div class="floating-shape shape-2 hidden lg:block opacity-30"></div>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center fade-in">
-            <h2 class="text-4xl font-bold tracking-tight title-shadow mb-4">
-                Historias que <span class="text-gradient">Inspiran</span>
-            </h2>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed">
-                Conoce las experiencias de familias que han confiado en nosotros
-            </p>
-        </div>
-
-        <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Testimonio 1 -->
-            <div class="testimonial-card p-8 rounded-2xl hover-lift scroll-animate">
-                <div class="mb-6">
-                    <div class="flex text-yellow-400 mb-4">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed italic">
-                        "El Centro Josué ha transformado la vida de nuestro hijo. Los profesionales no solo son expertos, sino que tratan a cada niño con amor y dedicación especial."
-                    </p>
-                </div>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 bg-gradient-to-br from-[#0D8F8F] to-[#005960] rounded-full flex items-center justify-center text-white font-bold mr-4">
-                        MR
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gray-800">María Rodríguez</h4>
-                        <p class="text-sm text-gray-600">Madre de paciente</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonio 2 -->
-            <div class="testimonial-card p-8 rounded-2xl hover-lift scroll-animate">
-                <div class="mb-6">
-                    <div class="flex text-yellow-400 mb-4">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed italic">
-                        "Encontramos en el Centro Josué no solo profesionales capacitados, sino un equipo humano que entiende realmente las necesidades de las familias con niños TEA."
-                    </p>
-                </div>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 bg-gradient-to-br from-[#0D8F8F] to-[#005960] rounded-full flex items-center justify-center text-white font-bold mr-4">
-                        CL
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gray-800">Carlos López</h4>
-                        <p class="text-sm text-gray-600">Padre de paciente</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonio 3 -->
-            <div class="testimonial-card p-8 rounded-2xl hover-lift scroll-animate">
-                <div class="mb-6">
-                    <div class="flex text-yellow-400 mb-4">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed italic">
-                        "La atención personalizada y el seguimiento continuo han marcado una diferencia significativa en el desarrollo de nuestra hija. Eternamente agradecidos."
-                    </p>
-                </div>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 bg-gradient-to-br from-[#0D8F8F] to-[#005960] rounded-full flex items-center justify-center text-white font-bold mr-4">
-                        AG
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gray-800">Ana García</h4>
-                        <p class="text-sm text-gray-600">Madre de paciente</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Llamada a acción -->
-        <div class="text-center mt-16 fade-in">
-            <div class="glass-effect max-w-2xl mx-auto p-8 rounded-2xl">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">¿Quieres ser parte de nuestra historia de éxito?</h3>
-                <p class="text-gray-600 mb-6">Cada familia tiene una historia única. Comparte la tuya con nosotros y permítenos acompañarte en este camino.</p>
-                <a href="#evaluacion" class="btn-primary inline-block px-8 py-3 text-white font-semibold rounded-lg shadow-lg hover-lift">
-                    Comienza Tu Historia
-                </a>
-            </div>
-        </div>
+<section class="section-shell bg-[#f3fbf8]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <span class="section-kicker">Historias que inspiran</span>
+      <h2 class="section-title mt-5">Familias que avanzan acompañadas.</h2>
+      <p class="section-lead mt-6">Testimonios de confianza, progreso y cercanía terapéutica.</p>
     </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-5">
+      {testimonials.map(([initials, name, role, quote]) => (
+        <article class="testimonial-card p-7 hover-lift scroll-animate">
+          <div class="flex text-[#f1b84b] mb-5" aria-label="Calificación de 5 estrellas">
+            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+          </div>
+          <p class="text-slate-700 leading-relaxed mb-7">“{quote}”</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#063b45] to-[#0b8f88] text-white font-extrabold flex items-center justify-center">{initials}</div>
+            <div>
+              <h3 class="font-extrabold text-[#063b45]">{name}</h3>
+              <p class="text-sm text-slate-500">{role}</p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="text-center mt-12 fade-in">
+      <div class="liquid-card max-w-2xl mx-auto p-8">
+        <h3 class="text-2xl font-extrabold text-[#063b45] mb-3">¿Quieres dar el primer paso?</h3>
+        <p class="text-slate-600 mb-6">Cuéntanos tu caso y nuestro equipo te orientará con claridad.</p>
+        <a href="#evaluacion" class="btn-modern btn-filled">Comenzar evaluación</a>
+      </div>
+    </div>
+  </div>
 </section>

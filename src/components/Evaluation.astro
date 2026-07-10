@@ -1,45 +1,40 @@
 ---
+const steps = [
+  ["01", "Entrevista Inicial", "Escuchamos tus inquietudes, conocemos la historia de desarrollo y explicamos cómo podemos ayudar."],
+  ["02", "Evaluación Multidisciplinaria", "Aplicamos pruebas especializadas y observación clínica adaptada al ritmo del niño."],
+  ["03", "Análisis Clínico", "El equipo integra la información para definir fortalezas, retos y posibles condiciones."],
+  ["04", "Resultados y Plan", "Entregamos un informe comprensible y una propuesta terapéutica personalizada."],
+];
 ---
-<!-- ========== SECCIÓN SOLICITUD DE EVALUACIÓN ========== -->
-<section id="evaluacion" class="py-16 lg:py-24">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center text-3xl font-bold tracking-tight" style="color: #0A2A4E;">
-            <h2>Proceso de Evaluación  </h2>
-        </div>
-        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <h3 class="text-xl font-semibold mb-2 " style="color: #005960;">Entrevista Inicial con Padres</h3>
-                <p class="text-justify">Un primer encuentro cálido donde escuchamos tus inquietudes, conocemos la historia de desarrollo de tu hijo o hija y te explicamos cómo podemos ayudarles desde nuestro enfoque integral.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Evaluación Multidisciplinaria</h3>
-                <p class="text-justify">Realizamos sesiones de evaluación dinámicas y adaptadas al niño. Aplicamos pruebas especializadas en psicología, lenguaje, neuropsicología y realizamos observación clínica de su conducta.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Análisis Clínico Conjunto</h3>
-                <p class="text-justify">Nuestro equipo de especialistas analiza a detalle toda la información recopilada para establecer un perfil claro de las fortalezas y los retos (TEA, TDAH, aprendizaje) del paciente.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <h3 class="text-xl font-semibold mb-2" style="color: #005960;">Entrega de Resultados y Plan</h3>
-                <p class="text-justify">Nos reunimos nuevamente para entregarte un informe claro y comprensible, explicando el diagnóstico y proponiendo un plan de intervención terapéutica 100% personalizado.</p>
-            </div>
-            <br>
-        </div>
-        <div class="text-center">
-            <h2 class="text-3xl font-bold tracking-tight" style="color: #0A2A4E;">Inicia el Camino con Nosotros</h2>
-            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-                Completa el siguiente formulario para dar el primer paso. Nuestro equipo se pondrá en contacto contigo para coordinar una cita.
-            </p>
-        </div>
-        
-        <div class="mt-12 max-w-4xl mx-auto">
-            <!-- Aquí se incrustará el Google Form -->
-            <div class="bg-gray-100 p-8 rounded-lg shadow-inner">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdtCZbR2kZZBdL7HkIZVt8IMMf6O55QWA6AUBaXQ9NkYtxZWw/viewform?embedded=true" title="Formulario de Solicitud de Evaluación en CIATEJ" width="100%" height="800" frameborder="0" class="form-iframe" style="max-width: 640px; margin: 0 auto; display: block;" allowfullscreen>Loading...</iframe>
-            </div>
-            <p class="mt-4 text-xs text-center text-gray-500">
-                Tu información es confidencial y será tratada con el máximo respeto y profesionalismo.
-            </p>
-        </div>
+
+<section id="evaluacion" class="section-shell bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="section-kicker">Proceso de evaluación</span>
+      <h2 class="section-title mt-5">Un camino simple, explicado paso a paso.</h2>
+      <p class="section-lead mt-6">Diseñamos el proceso para que la familia se sienta orientada desde el primer contacto.</p>
     </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {steps.map(([number, title, text]) => (
+        <article class="soft-card p-7 hover-lift">
+          <div class="text-sm font-extrabold text-[#0b8f88] mb-5">{number}</div>
+          <h3 class="text-xl font-extrabold mb-3 text-[#063b45]">{title}</h3>
+          <p class="text-slate-600 leading-relaxed">{text}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-16 max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h3 class="text-3xl font-extrabold tracking-tight text-[#063b45]">Inicia el camino con nosotros</h3>
+        <p class="mt-4 section-lead max-w-2xl mx-auto">Completa el formulario y nuestro equipo se pondrá en contacto contigo para coordinar una cita.</p>
+      </div>
+
+      <div class="liquid-card p-3 sm:p-5">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdtCZbR2kZZBdL7HkIZVt8IMMf6O55QWA6AUBaXQ9NkYtxZWw/viewform?embedded=true" title="Formulario de Solicitud de Evaluación en CIATEJ" width="100%" height="800" frameborder="0" class="form-iframe bg-white" style="max-width: 720px; margin: 0 auto; display: block;" allowfullscreen>Loading...</iframe>
+      </div>
+      <p class="mt-4 text-xs text-center text-slate-500">Tu información es confidencial y será tratada con el máximo respeto y profesionalismo.</p>
+    </div>
+  </div>
 </section>

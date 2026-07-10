@@ -2,26 +2,48 @@
 import { Image } from 'astro:assets';
 import team from "../assets/image/team/EquipoCIATEJ.jpeg";
 ---
-<!-- ========== SECCIÓN QUIÉNES SOMOS ========== -->
-<section id="quienes-somos" class="py-16 lg:py-24">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div>
-            <h2 class="text-3xl font-bold tracking-tight text-center" style="color: #0A2A4E;">¿Quiénes Somos?</h2>
-            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 text-justify">
-                El Centro Integral de Atención Terapéutico Josué (CIATEJ) es un espacio terapéutico y educativo especializado en la atención de niños y jóvenes con Trastorno del Espectro Autista (TEA), Trastorno por Déficit de Atención e Hiperactividad (TDAH), y dificultades de comunicación y aprendizaje. Contamos con un equipo interdisciplinario que trabaja de manera coordinada para brindar evaluaciones, terapias de lenguaje, intervenciones conductuales, orientación familiar y acompañamiento psicopedagógico.
-            </p>
+
+<section id="quienes-somos" class="section-shell bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div class="lg:col-span-5 lg:pr-4">
+        <span class="section-kicker">Quiénes somos</span>
+        <h2 class="section-title mt-5">Cuidado profesional que se siente cercano.</h2>
+        <p class="section-lead mt-7">
+          En CIATEJ reunimos distintas especialidades para acompañar a niños y adolescentes con TEA, TDAH, dificultades de comunicación, aprendizaje y otros retos del neurodesarrollo.
+        </p>
+        <p class="mt-5 text-slate-600 leading-relaxed">
+          Escuchamos a cada familia, comprendemos el contexto y trazamos una ruta terapéutica clara. El objetivo no es avanzar más rápido, sino avanzar de una forma que tenga sentido para cada niño.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 relative lg:pb-16">
+        <div class="relative overflow-hidden rounded-[2rem] min-h-[25rem] sm:min-h-[34rem] shadow-[0_28px_70px_rgba(8,64,73,.16)]">
+          <Image
+            src={team}
+            alt="Equipo de profesionales del Centro Integral de Atención Terapéutico Josué (CIATEJ) en Olanchito"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#063b45]/45 via-transparent to-transparent"></div>
+          <p class="absolute bottom-6 left-6 right-6 max-w-sm text-white font-semibold leading-relaxed">
+            Profesionales que comparten criterios, objetivos y una mirada integral de cada caso.
+          </p>
         </div>
-        <div class="mt-12 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <h3 class="text-2xl font-semibold" style="color: #005960;">Misión</h3>
-                <p class="text-justify">Brindar atención terapéutica integral, personalizada y de excelencia a niños y adolescentes con condiciones del neurodesarrollo, dificultades de lenguaje y aprendizaje. Trabajamos de la mano con sus familias en un entorno de profundo respeto y empatía, promoviendo el bienestar, la autonomía y la verdadera inclusión de cada paciente en su entorno.</p>
-                <h3 class="text-2xl font-semibold" style="color: #005960;">Visión</h3>
-                <p class="text-justify">Ser el centro terapéutico infantil de mayor referencia e impacto en Olanchito y la región, reconocidos por nuestra calidad humana, ética y profesionalismo. Aspiramos a transformar vidas, empoderar a las familias y contribuir a la construcción de una sociedad más consciente, empática y accesible que celebre la neurodiversidad.</p>
-                
-            </div>
-            <div class="pl-20 pr-20">
-                <Image src={team} alt="Equipo de profesionales del Centro Integral de Atención Terapéutico Josué (CIATEJ) en Olanchito" class="rounded-lg shadow-xl" loading="lazy">
-            </div>
+
+        <div class="mt-5 lg:mt-0 lg:absolute lg:-bottom-2 lg:-left-16 lg:right-8 grid sm:grid-cols-2 gap-3">
+          <article class="liquid-card p-6 sm:p-7">
+            <span class="text-xs font-extrabold tracking-[0.16em] uppercase text-[#0b8f88]">Nuestra misión</span>
+            <h3 class="text-xl font-extrabold text-[#063b45] mt-3">Intervenir con propósito.</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mt-2">Atención especializada, objetivos claros y acompañamiento constante.</p>
+          </article>
+          <article class="rounded-[2rem] bg-[#063b45] p-6 sm:p-7 text-white shadow-[0_20px_50px_rgba(6,59,69,.22)]">
+            <span class="text-xs font-extrabold tracking-[0.16em] uppercase text-[#bdeee8]">Nuestra visión</span>
+            <h3 class="text-xl font-extrabold mt-3">Transformar desde la empatía.</h3>
+            <p class="text-sm text-white/70 leading-relaxed mt-2">Familias fortalecidas y una sociedad más consciente e inclusiva.</p>
+          </article>
         </div>
+      </div>
     </div>
+  </div>
 </section>

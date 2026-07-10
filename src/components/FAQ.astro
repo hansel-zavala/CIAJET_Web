@@ -1,155 +1,41 @@
 ---
 const faqs = [
-  {
-    question: "¿A partir de qué edad atienden en CIATEJ?",
-    answer: "Brindamos atención especializada a niños, niñas y adolescentes en un rango de edad de 3 a 15 años. Nuestras terapias e instalaciones están adaptadas específicamente para las necesidades de estas etapas del desarrollo."
-  },
-  {
-    question: "¿Necesito tener un diagnóstico médico previo para llevar a mi hijo(a)?",
-    answer: "No es necesario. Muchos padres llegan a nosotros solo con la sospecha o notando que su hijo tiene algún reto en la escuela o en casa. En CIATEJ contamos con el servicio de Evaluación y Diagnóstico donde nuestro equipo determinará si existe alguna condición (TEA, TDAH, etc.) o si solo requiere un apoyo específico."
-  },
-  {
-    question: "¿Cuánto dura cada sesión de terapia y cuántas veces a la semana debe asistir?",
-    answer: "Por lo general, las sesiones terapéuticas tienen una duración de 45 a 50 minutos. La frecuencia semanal (si debe ir 1, 2 o más veces por semana) se determina de manera completamente individualizada tras la evaluación inicial, basándonos en lo que tu hijo realmente necesita."
-  },
-  {
-    question: "¿Los padres participamos en las terapias?",
-    answer: "¡Absolutamente! Consideramos a la familia como el pilar más importante. Dependiendo de la etapa y el tipo de intervención, los padres pueden ingresar a las sesiones para observar, o reciben orientación constante sobre cómo aplicar los mismos ejercicios y estrategias en casa para acelerar el progreso."
-  },
-  {
-    question: "¿Cómo puedo solicitar una primera cita de evaluación?",
-    answer: "Es muy sencillo. Puedes hacer clic en el botón de \"Solicitar Evaluación\" en esta página, llamarnos a nuestros números de contacto, o enviarnos un mensaje por WhatsApp. Nuestro equipo te guiará con calidez en cada paso del proceso."
-  }
+  ["¿A partir de qué edad atienden en CIATEJ?", "Brindamos atención especializada a niños, niñas y adolescentes de 3 a 15 años. Las terapias e instalaciones están adaptadas a estas etapas del desarrollo."],
+  ["¿Necesito tener un diagnóstico médico previo?", "No es necesario. Puedes llegar con una sospecha o inquietud. Nuestro equipo realiza evaluación y diagnóstico para determinar si existe TEA, TDAH u otra necesidad de apoyo."],
+  ["¿Cuánto dura cada sesión de terapia?", "Por lo general, las sesiones duran de 45 a 50 minutos. La frecuencia semanal se define después de la evaluación inicial según las necesidades del niño."],
+  ["¿Los padres participamos en las terapias?", "Sí. La familia es una parte clave del proceso. Según el tipo de intervención, los padres pueden observar sesiones o recibir orientación para aplicar estrategias en casa."],
+  ["¿Cómo solicito una primera evaluación?", "Puedes completar el formulario de esta página, llamar o escribir por WhatsApp. Nuestro equipo te guiará paso a paso."],
 ];
 ---
 
-<section id="faq" class="py-16 lg:py-24 bg-gray-50/50 relative">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <div class="text-center fade-in">
-            <h2 class="text-4xl font-bold tracking-tight title-shadow mb-4">
-                Preguntas <span class="text-gradient">Frecuentes (FAQ)</span>
-            </h2>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed">
-                Resolvemos tus dudas para que sientas la confianza de dar el primer paso.
-            </p>
-        </div>
-
-        <div class="mt-12 space-y-4">
-            {faqs.map((faq, index) => (
-                <details class="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover-lift scroll-animate">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-[#0A2A4E]">
-                        <span class="font-bold">{faq.question}</span>
-                        <span class="transition group-open:rotate-180" style="color: #0D8F8F;">
-                            <ion-icon name="chevron-down-outline" class="w-6 h-6" aria-hidden="true"></ion-icon>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-600 leading-relaxed bg-white">
-                        <p>{faq.answer}</p>
-                    </div>
-                </details>
-            ))}
-        </div>
+<section id="faq" class="section-shell bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <div class="text-center fade-in">
+      <span class="section-kicker">Preguntas frecuentes</span>
+      <h2 class="section-title mt-5">Dudas normales antes de empezar.</h2>
+      <p class="section-lead mt-6">Respuestas claras para que puedas tomar una decisión con confianza.</p>
     </div>
+
+    <div class="mt-12 space-y-4">
+      {faqs.map(([question, answer]) => (
+        <details class="group soft-card overflow-hidden scroll-animate">
+          <summary class="flex justify-between gap-5 items-center font-bold cursor-pointer list-none p-6 text-[#063b45]">
+            <span>{question}</span>
+            <span class="transition group-open:rotate-180 text-[#0b8f88]">
+              <ion-icon name="chevron-down-outline" class="w-6 h-6" aria-hidden="true"></ion-icon>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+            <p>{answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
 </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        class AnimatedAccordion {
-            el: HTMLDetailsElement;
-            group: AnimatedAccordion[];
-            summary: HTMLElement;
-            content: HTMLElement;
-            animation: Animation | null;
-            isClosing: boolean;
-            isExpanding: boolean;
-
-            constructor(el: HTMLDetailsElement, group: AnimatedAccordion[]) {
-                this.el = el;
-                this.group = group; // Array de todos los acordeones
-                this.summary = el.querySelector('summary') as HTMLElement;
-                this.content = el.querySelector('div') as HTMLElement;
-                this.animation = null;
-                this.isClosing = false;
-                this.isExpanding = false;
-                
-                this.summary.addEventListener('click', (e: MouseEvent) => this.onClick(e));
-            }
-
-            onClick(e: Event) {
-                e.preventDefault();
-                this.el.style.overflow = 'hidden';
-                if (this.isClosing || !this.el.open) {
-                    this.open();
-                } else if (this.isExpanding || this.el.open) {
-                    this.shrink();
-                }
-            }
-
-            shrink() {
-                this.isClosing = true;
-                const startHeight = `${this.el.offsetHeight}px`;
-                const endHeight = `${this.summary.offsetHeight}px`;
-                if (this.animation) this.animation.cancel();
-                
-                this.animation = this.el.animate({
-                    height: [startHeight, endHeight]
-                }, {
-                    duration: 350,
-                    easing: 'ease-in-out'
-                });
-                
-                this.animation.onfinish = () => this.onAnimationFinish(false);
-                this.animation.oncancel = () => this.isClosing = false;
-            }
-
-            open() {
-                // Cerrar otros acordeones abiertos
-                this.group.forEach(accordion => {
-                    if (accordion !== this && accordion.el.open && !accordion.isClosing) {
-                        accordion.shrink();
-                    }
-                });
-
-                this.el.style.height = `${this.el.offsetHeight}px`;
-                this.el.open = true;
-                
-                window.requestAnimationFrame(() => {
-                    this.isExpanding = true;
-                    const startHeight = `${this.el.offsetHeight}px`;
-                    const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
-                    
-                    if (this.animation) this.animation.cancel();
-                    
-                    this.animation = this.el.animate({
-                        height: [startHeight, endHeight]
-                    }, {
-                        duration: 350,
-                        easing: 'ease-in-out'
-                    });
-                    
-                    this.animation.onfinish = () => this.onAnimationFinish(true);
-                    this.animation.oncancel = () => this.isExpanding = false;
-                });
-            }
-
-            onAnimationFinish(open: boolean) {
-                this.el.open = open;
-                this.animation = null;
-                this.isClosing = false;
-                this.isExpanding = false;
-                this.el.style.height = this.el.style.overflow = '';
-            }
-        }
-
-        const faqsElements = document.querySelectorAll('#faq details');
-        const accordions: AnimatedAccordion[] = [];
-        faqsElements.forEach((el) => accordions.push(new AnimatedAccordion(el as HTMLDetailsElement, accordions)));
-    });
-</script>
-
 <style>
-    /* Ocultar el marcador nativo del details en navegadores webkit (Chrome, Safari, etc.) */
-    details > summary::-webkit-details-marker {
-        display: none;
-    }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
 </style>
