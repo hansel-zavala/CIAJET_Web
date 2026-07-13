@@ -1,14 +1,97 @@
 ---
-const services = [
-  ["clipboard-outline", "Evaluación y diagnóstico", "Perfil del neurodesarrollo", "Valoraciones clínicas para identificar fortalezas, necesidades y definir una ruta de intervención clara."],
-  ["chatbubbles-outline", "Terapia del lenguaje", "Comunicación y conexión", "Intervenciones para fortalecer expresión, comprensión y comunicación verbal o no verbal."],
-  ["body-outline", "Terapia ocupacional", "Autonomía e integración sensorial", "Experiencias terapéuticas para trabajar motricidad, regulación sensorial y actividades cotidianas."],
-  ["heart-outline", "Psicología clínica infantil", "Bienestar emocional", "Un espacio seguro para acompañar emociones, autoestima, adaptación y bienestar familiar."],
-  ["extension-puzzle-outline", "Intervención conductual", "Habilidades para la vida", "Estrategias respetuosas para desarrollar habilidades adaptativas y reducir barreras de aprendizaje."],
-  ["school-outline", "Apoyo psicoeducativo", "Aprendizaje e inclusión", "Acompañamiento escolar, técnicas de estudio y estrategias ajustadas a cada forma de aprender."],
-  ["people-outline", "Orientación familiar", "Acompañamiento en casa", "Herramientas prácticas para que padres y cuidadores puedan sostener los avances cotidianos."],
-  ["happy-outline", "Talleres grupales", "Habilidades sociales", "Espacios seguros para practicar interacción, amistad, turnos y participación con otros."],
-  ["leaf-outline", "Masaje terapéutico", "Relajación y bienestar", "Técnicas profesionales para adultos orientadas a aliviar tensión, ansiedad y estrés diario."],
+const serviceCategories = [
+  {
+    icon: "heart-outline",
+    title: "Atención Psicológica",
+    description: "Acompañamiento profesional para el bienestar emocional, conductual y personal.",
+    services: [
+      {
+        name: "Terapia psicológica",
+        description: "Acompañamiento para comprender emociones, pensamientos y conductas, desarrollar recursos personales y afrontar situaciones que afectan el bienestar cotidiano.",
+      },
+      {
+        name: "Terapia conductual",
+        description: "Intervención orientada a identificar patrones de conducta y fortalecer habilidades adaptativas mediante objetivos claros, estrategias respetuosas y seguimiento profesional.",
+      },
+      {
+        name: "Terapia individual",
+        description: "Espacio personalizado y confidencial en el que cada persona trabaja sus necesidades emocionales, sociales o personales a su propio ritmo.",
+      },
+      {
+        name: "Terapia para dificultades de atención, depresión y estrés",
+        description: "Apoyo para reconocer síntomas, mejorar la regulación emocional y practicar estrategias de atención, organización y afrontamiento según cada necesidad.",
+      },
+      {
+        name: "Terapia vocacional y desarrollo personal",
+        description: "Proceso para explorar intereses, habilidades y metas, facilitando decisiones vocacionales y el desarrollo de un proyecto personal con mayor claridad.",
+      },
+    ],
+  },
+  {
+    icon: "school-outline",
+    title: "Atención Terapéutica Educativa",
+    description: "Intervenciones especializadas para fortalecer la comunicación y el aprendizaje.",
+    services: [
+      {
+        name: "Terapia de lenguaje",
+        description: "Fortalece habilidades de comprensión, expresión, pronunciación y comunicación funcional de acuerdo con la edad y las necesidades de cada persona.",
+      },
+      {
+        name: "Terapia para el Trastorno del Espectro Autista (TEA)",
+        description: "Intervención personalizada para favorecer la comunicación, interacción, autonomía y regulación, respetando el perfil, ritmo y forma de aprender de cada persona.",
+      },
+      {
+        name: "Terapia para el Trastorno por Déficit de Atención e Hiperactividad (TDAH)",
+        description: "Desarrolla estrategias para la atención, organización, autorregulación y manejo de impulsos que pueden aplicarse en la vida diaria, familiar y educativa.",
+      },
+    ],
+  },
+  {
+    icon: "clipboard-outline",
+    title: "Evaluaciones Psicodiagnósticas",
+    description: "Valoraciones que permiten comprender cada necesidad y orientar el tratamiento.",
+    services: [
+      {
+        name: "Evaluación psicológica",
+        description: "Integra entrevistas, observación e instrumentos psicológicos para conocer el funcionamiento emocional, conductual y cognitivo, y orientar recomendaciones.",
+      },
+      {
+        name: "Evaluación del Trastorno del Espectro Autista (TEA)",
+        description: "Proceso clínico que considera la historia del desarrollo, entrevistas, observación e instrumentos especializados para identificar características asociadas al TEA.",
+      },
+      {
+        name: "Evaluación del trastorno del lenguaje (TL)",
+        description: "Valora comprensión, expresión, pronunciación y uso social del lenguaje para reconocer fortalezas, dificultades y necesidades de intervención.",
+      },
+    ],
+  },
+  {
+    icon: "medical-outline",
+    title: "Otras Terapias",
+    description: "Atención complementaria para la recuperación, estimulación y el bienestar físico.",
+    services: [
+      {
+        name: "Terapia de rehabilitación cognitiva",
+        description: "Ejercita funciones como atención, memoria, razonamiento y planificación para favorecer la autonomía después de cambios neurológicos o dificultades cognitivas.",
+      },
+      {
+        name: "Terapia de estimulación temprana",
+        description: "Propone actividades adecuadas para la edad que favorecen el desarrollo motor, cognitivo, comunicativo y socioemocional durante los primeros años de vida.",
+      },
+      {
+        name: "Terapia de lenguaje para personas que han sufrido un accidente cerebrovascular (ACV)",
+        description: "Trabaja la recuperación o compensación de habilidades de habla, comprensión, lectura, escritura y comunicación afectadas después de un ACV.",
+      },
+      {
+        name: "Terapia para parálisis facial",
+        description: "Emplea ejercicios y técnicas terapéuticas para estimular la movilidad facial y apoyar funciones orales según la valoración de cada persona.",
+      },
+      {
+        name: "Masaje relajante",
+        description: "Utiliza técnicas manuales suaves para disminuir la tensión muscular, favorecer la relajación y brindar una experiencia de bienestar físico.",
+      },
+    ],
+  },
 ];
 ---
 
@@ -22,21 +105,43 @@ const services = [
       </p>
     </header>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-      {services.map(([icon, title, subtitle, text], index) => (
-        <article class="group relative min-h-[20rem] sm:min-h-[22rem] p-7 sm:p-9 bg-white/82 border border-white rounded-[1.75rem] flex flex-col shadow-[0_16px_45px_rgba(8,64,73,.09)] transition-[transform,background-color,box-shadow] duration-300 hover:-translate-y-1.5 hover:bg-[#063b45] hover:shadow-[0_24px_55px_rgba(6,59,69,.2)]">
-          <div class="flex items-start justify-between gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-[#dff8f1] text-[#0b8f88] flex items-center justify-center transition-colors duration-300 group-hover:bg-white/12 group-hover:text-[#bdeee8]">
+    <div class="grid lg:grid-cols-2 gap-5 lg:gap-6">
+      {serviceCategories.map(({ icon, title, description, services }) => (
+        <article class="group relative overflow-hidden p-7 sm:p-9 bg-white/82 border border-white rounded-[1.75rem] flex flex-col shadow-[0_16px_45px_rgba(8,64,73,.09)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_55px_rgba(6,59,69,.15)]">
+          <div class="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#dff8f1]/70 blur-3xl translate-x-10 -translate-y-10 pointer-events-none"></div>
+
+          <div class="relative flex items-start gap-4 sm:gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-2xl bg-[#dff8f1] text-[#0b8f88] flex items-center justify-center transition-colors duration-300 group-hover:bg-[#0b8f88] group-hover:text-white">
               <ion-icon name={icon} class="text-2xl" aria-hidden="true"></ion-icon>
             </div>
-            <span class="font-display text-2xl font-bold text-[#0b8f88]/30 transition-colors duration-300 group-hover:text-white/25">{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-[#0b8f88] mb-2">
+                {services.length} servicios
+              </p>
+              <h3 class="text-2xl sm:text-[1.7rem] font-extrabold text-[#063b45] leading-tight">{title}</h3>
+            </div>
           </div>
 
-          <div class="mt-auto pt-10">
-            <p class="text-sm font-extrabold text-[#0b8f88] mb-3 transition-colors duration-300 group-hover:text-[#bdeee8]">{subtitle}</p>
-            <h3 class="text-2xl font-extrabold text-[#063b45] leading-tight transition-colors duration-300 group-hover:text-white">{title}</h3>
-            <p class="mt-4 text-slate-600 leading-relaxed transition-colors duration-300 group-hover:text-white/70">{text}</p>
-          </div>
+          <p class="relative mt-5 text-slate-600 leading-relaxed max-w-xl">{description}</p>
+
+          <ul class="relative mt-7 border-t border-[#d8ebe7] divide-y divide-[#d8ebe7]" role="list">
+            {services.map(({ name, description }) => (
+              <li>
+                <details class="group/service text-[#244b50]">
+                  <summary class="flex items-start gap-3 py-4 rounded-lg cursor-pointer list-none leading-relaxed outline-none transition-colors hover:text-[#0b8f88] focus-visible:ring-2 focus-visible:ring-[#0b8f88] focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
+                    <ion-icon name="checkmark-circle" class="shrink-0 mt-0.5 text-xl text-[#0b8f88]" aria-hidden="true"></ion-icon>
+                    <span class="font-semibold flex-1">{name}</span>
+                    <span class="shrink-0 w-7 h-7 rounded-full bg-[#e9f7f4] text-[#0b8f88] flex items-center justify-center transition-transform duration-300 group-open/service:rotate-45" aria-hidden="true">
+                      <ion-icon name="add-outline" class="text-lg"></ion-icon>
+                    </span>
+                  </summary>
+                  <div class="pb-5 pl-8 pr-2 sm:pr-9">
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed">{description}</p>
+                  </div>
+                </details>
+              </li>
+            ))}
+          </ul>
         </article>
       ))}
     </div>
